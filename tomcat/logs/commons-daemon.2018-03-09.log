@@ -1,0 +1,8 @@
+[2018-03-09 12:23:12] [info]  [ 8128] Commons Daemon procrun (1.1.0.0 64-bit) started
+[2018-03-09 12:23:12] [info]  [ 8128] Service Tomcat8 name Apache Tomcat 8.5 Tomcat8
+[2018-03-09 12:23:12] [info]  [ 8128] Service 'Tomcat8' installed
+[2018-03-09 12:23:12] [info]  [ 8128] Commons Daemon procrun finished
+[2018-03-09 12:24:12] [info]  [10808] Commons Daemon procrun (1.1.0.0 64-bit) started
+[2018-03-09 12:24:13] [info]  [10808] Deleting service...
+[2018-03-09 12:24:13] [info]  [10808] Delete service finished.
+[2018-03-09 12:24:13] [info]  [10808] Commons Daemon procrun finished

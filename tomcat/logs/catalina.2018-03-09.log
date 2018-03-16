@@ -1,0 +1,142 @@
+09-Mar-2018 12:24:54.220 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.28
+09-Mar-2018 12:24:54.317 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 23:10:25 UTC
+09-Mar-2018 12:24:54.321 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.28.0
+09-Mar-2018 12:24:54.322 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Mar-2018 12:24:54.323 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Mar-2018 12:24:54.324 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Mar-2018 12:24:54.325 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_121\jre
+09-Mar-2018 12:24:54.325 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_121-b13
+09-Mar-2018 12:24:54.326 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Mar-2018 12:24:54.327 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:24:54.328 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:24:54.329 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\accenture\Desktop\xampp\tomcat\conf\logging.properties
+09-Mar-2018 12:24:54.332 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Mar-2018 12:24:54.333 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Mar-2018 12:24:54.333 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Mar-2018 12:24:54.334 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Mar-2018 12:24:54.335 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:24:54.336 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:24:54.337 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\accenture\Desktop\xampp\tomcat\temp
+09-Mar-2018 12:24:54.338 INFORMAZIONI [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\TortoiseGit\bin;C:\Users\AMMINISTRATORE\AppData\Local\Microsoft\WindowsApps;.]
+09-Mar-2018 12:24:55.627 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:24:56.119 INFORMAZIONI [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Mar-2018 12:24:56.150 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:24:56.152 INFORMAZIONI [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Mar-2018 12:24:56.153 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.load Initialization processed in 3027 ms
+09-Mar-2018 12:24:56.216 INFORMAZIONI [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Mar-2018 12:24:56.216 INFORMAZIONI [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.28
+09-Mar-2018 12:24:56.236 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\docs]
+09-Mar-2018 12:24:57.002 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\docs] has finished in [614] ms
+09-Mar-2018 12:24:57.003 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\examples]
+09-Mar-2018 12:24:57.503 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\examples] has finished in [500] ms
+09-Mar-2018 12:24:57.504 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\host-manager]
+09-Mar-2018 12:24:57.568 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\host-manager] has finished in [64] ms
+09-Mar-2018 12:24:57.569 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\manager]
+09-Mar-2018 12:24:57.599 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\manager] has finished in [30] ms
+09-Mar-2018 12:24:57.599 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\ROOT]
+09-Mar-2018 12:24:57.622 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\ROOT] has finished in [23] ms
+09-Mar-2018 12:24:57.628 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:24:57.637 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:24:57.639 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.start Server startup in 1486 ms
+09-Mar-2018 12:25:09.695 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:25:09.888 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:25:10.013 INFORMAZIONI [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Mar-2018 12:25:10.159 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:25:10.164 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:25:10.167 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:25:10.168 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:26:49.295 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.28
+09-Mar-2018 12:26:49.299 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 23:10:25 UTC
+09-Mar-2018 12:26:49.301 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.28.0
+09-Mar-2018 12:26:49.301 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Mar-2018 12:26:49.302 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Mar-2018 12:26:49.303 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Mar-2018 12:26:49.304 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_121\jre
+09-Mar-2018 12:26:49.304 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_121-b13
+09-Mar-2018 12:26:49.305 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Mar-2018 12:26:49.306 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:26:49.307 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:26:49.308 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\accenture\Desktop\xampp\tomcat\conf\logging.properties
+09-Mar-2018 12:26:49.308 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Mar-2018 12:26:49.309 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Mar-2018 12:26:49.312 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Mar-2018 12:26:49.313 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Mar-2018 12:26:49.314 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:26:49.315 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:26:49.316 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\accenture\Desktop\xampp\tomcat\temp
+09-Mar-2018 12:26:49.316 INFORMAZIONI [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\TortoiseGit\bin;C:\Users\accenture\AppData\Local\Microsoft\WindowsApps;C:\Users\accenture\AppData\Local\Programs\Git\cmd;.]
+09-Mar-2018 12:26:49.466 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:26:49.658 INFORMAZIONI [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Mar-2018 12:26:49.667 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:26:49.669 INFORMAZIONI [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Mar-2018 12:26:49.670 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.load Initialization processed in 774 ms
+09-Mar-2018 12:26:49.696 INFORMAZIONI [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Mar-2018 12:26:49.696 INFORMAZIONI [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.28
+09-Mar-2018 12:26:49.708 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\docs]
+09-Mar-2018 12:26:50.042 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\docs] has finished in [333] ms
+09-Mar-2018 12:26:50.042 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\examples]
+09-Mar-2018 12:26:50.450 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\examples] has finished in [408] ms
+09-Mar-2018 12:26:50.451 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\host-manager]
+09-Mar-2018 12:26:50.501 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\host-manager] has finished in [50] ms
+09-Mar-2018 12:26:50.502 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\manager]
+09-Mar-2018 12:26:50.529 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\manager] has finished in [28] ms
+09-Mar-2018 12:26:50.530 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\ROOT]
+09-Mar-2018 12:26:50.552 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\ROOT] has finished in [22] ms
+09-Mar-2018 12:26:50.555 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:26:50.564 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:26:50.567 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.start Server startup in 896 ms
+09-Mar-2018 12:26:55.019 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:26:55.185 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:26:55.305 INFORMAZIONI [Thread-5] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Mar-2018 12:26:55.327 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:26:55.328 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:26:55.330 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:26:55.331 INFORMAZIONI [Thread-5] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:32:01.720 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server version:        Apache Tomcat/8.5.28
+09-Mar-2018 12:32:01.723 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 6 2018 23:10:25 UTC
+09-Mar-2018 12:32:01.724 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Server number:         8.5.28.0
+09-Mar-2018 12:32:01.724 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Windows 10
+09-Mar-2018 12:32:01.724 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            10.0
+09-Mar-2018 12:32:01.725 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+09-Mar-2018 12:32:01.725 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             C:\Program Files\Java\jdk1.8.0_121\jre
+09-Mar-2018 12:32:01.725 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           1.8.0_121-b13
+09-Mar-2018 12:32:01.726 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Oracle Corporation
+09-Mar-2018 12:32:01.726 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:32:01.726 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:32:01.727 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=C:\Users\accenture\Desktop\xampp\tomcat\conf\logging.properties
+09-Mar-2018 12:32:01.727 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+09-Mar-2018 12:32:01.727 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+09-Mar-2018 12:32:01.728 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+09-Mar-2018 12:32:01.728 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dignore.endorsed.dirs=
+09-Mar-2018 12:32:01.729 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:32:01.729 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=C:\Users\accenture\Desktop\xampp\tomcat
+09-Mar-2018 12:32:01.729 INFORMAZIONI [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=C:\Users\accenture\Desktop\xampp\tomcat\temp
+09-Mar-2018 12:32:01.730 INFORMAZIONI [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_121\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;C:\Program Files\TortoiseGit\bin;C:\Users\accenture\AppData\Local\Microsoft\WindowsApps;C:\Users\accenture\AppData\Local\Programs\Git\cmd;.]
+09-Mar-2018 12:32:01.875 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:32:02.068 INFORMAZIONI [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Mar-2018 12:32:02.080 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:32:02.083 INFORMAZIONI [main] org.apache.tomcat.util.net.NioSelectorPool.getSharedSelector Using a shared selector for servlet write/read
+09-Mar-2018 12:32:02.083 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.load Initialization processed in 755 ms
+09-Mar-2018 12:32:02.108 INFORMAZIONI [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+09-Mar-2018 12:32:02.108 INFORMAZIONI [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet Engine: Apache Tomcat/8.5.28
+09-Mar-2018 12:32:02.118 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\docs]
+09-Mar-2018 12:32:02.444 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\docs] has finished in [325] ms
+09-Mar-2018 12:32:02.444 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\examples]
+09-Mar-2018 12:32:02.856 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\examples] has finished in [412] ms
+09-Mar-2018 12:32:02.856 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\host-manager]
+09-Mar-2018 12:32:02.905 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\host-manager] has finished in [49] ms
+09-Mar-2018 12:32:02.905 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\manager]
+09-Mar-2018 12:32:02.933 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\manager] has finished in [28] ms
+09-Mar-2018 12:32:02.934 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deploying web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\ROOT]
+09-Mar-2018 12:32:02.955 INFORMAZIONI [localhost-startStop-1] org.apache.catalina.startup.HostConfig.deployDirectory Deployment of web application directory [C:\Users\accenture\Desktop\xampp\tomcat\webapps\ROOT] has finished in [21] ms
+09-Mar-2018 12:32:02.958 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:32:02.967 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:32:02.970 INFORMAZIONI [main] org.apache.catalina.startup.Catalina.start Server startup in 886 ms
+09-Mar-2018 12:32:26.354 INFORMAZIONI [main] org.apache.catalina.core.StandardServer.await A valid shutdown command was received via the shutdown port. Stopping the Server instance.
+09-Mar-2018 12:32:26.354 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:32:26.507 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:32:26.673 INFORMAZIONI [main] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+09-Mar-2018 12:32:26.710 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:32:26.712 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["ajp-nio-8009"]
+09-Mar-2018 12:32:26.714 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+09-Mar-2018 12:32:26.715 INFORMAZIONI [main] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["ajp-nio-8009"]
