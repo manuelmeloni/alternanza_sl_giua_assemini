@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Home Page</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/myStyle.css" rel="stylesheet">
@@ -29,10 +29,14 @@
     <div class="container">
         <h1>Servizi </h1>
         <div class="contenitore1" style="max-width: 1200px; margin: 0px auto;"><div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 177px;"><ul class="bxslider" style="width: 1015%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-            <span style="max-width: 1200px; margin: 0px auto;" onclick="openNav()"><li style="float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/list.svg" alt="Leggi consigli dal reparto"><br><br><strong>Pronto Soccorso</strong><br>Lista d'attesa pronto soccorso</span>
-
             
 
+
+            <!--gestione lista d attesa con apertura della lista delle persone con conseguente codice-->
+            <li style="float: left; list-style: none; position: relative; width: 234.75px;"><span style="max-width: 1200px; margin: 0px auto;" onclick="openNav()"><a href="#"><img src="images/list.svg" alt="Leggi consigli dal reparto"><br><br><strong>Pronto Soccorso</strong><br>Lista d'attesa pronto soccorso</span>
+
+            
+            <!--servizi vari home page-->
             </a></li>
             <li style="float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/file.svg" alt="Ritira referti"><br><br><strong>Ritiro referti medici</strong><br></a></li>
             <li style="float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/clock.svg" stlye="width:234.75px;" style:height="234.75px;%" "><br><br><strong>Orari</strong><br>Apertura e chiusura dell'Ospedale</a></li>
@@ -44,6 +48,8 @@
         </div>    
 </section>
 
+
+<!--finestre collegamento alle news-->
  <div>    
  <div class="col-sm-12 col-md-12" style="height:100%; padding-right: 4%; padding-left: 4%;padding-top: 2%; background-color:#F0F0FF;float:all;">
   <div class="col-sm-10 col-md-12">
@@ -69,7 +75,7 @@
   </div> 
  </div> 
 
-
+<!--script per l'apertura della lista d attesa-->
     <script>
 function openNav() {
     document.getElementById("mySidenav").style.width = "200px";
