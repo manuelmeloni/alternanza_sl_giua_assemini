@@ -15,5 +15,8 @@ public class NewsDAOTest {
 			System.out.println(snews.toString());
 		});
 		
+		
+		
+		
 	}
 }

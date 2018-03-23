@@ -17,12 +17,12 @@ public class NewsDAO extends BaseDAO {
 
 	public List<News> getAllNews(String query) {
 		logger.info("Recupero tutte le news");
-		logger.info("Recupero tutte le news");
 		List<News> news = new ArrayList<News>();
 
 		try {
 			ResultSet rs = getDbm().performQuery(query);
 			while (rs.next()) {
+				int id = rs.getInt("id");
 				String titolo = rs.getString("titolo");
 				String sottotitolo = rs.getString("sottotitolo");
 				String testo = rs.getString("testo");
@@ -30,6 +30,7 @@ public class NewsDAO extends BaseDAO {
 				boolean abilitato = rs.getBoolean("abilitato");
 
 				News current = new News(titolo, sottotitolo, testo, abilitato, tipo);
+				current.setId(id);
 				news.add(current);
 			}
 		} catch (SQLException e) {
@@ -41,6 +42,14 @@ public class NewsDAO extends BaseDAO {
 	}
 
 	public List<News> getAllEnableNews() {
-		return getAllNews("select * from news where abilitato = 1");
+		return getAllNews("select * from news where abilitato = 1 and tipo != 'p' ");
+	}
+	
+	public News getPrincipalNews() {
+		return getAllNews("select * from news where abilitato = 1 and tipo = 'p'").get(0);
+	}
+	
+	public News getSingleNews(int id) {
+		return getAllNews("select * from news where abilitato = 1 and id ="+id).get(0);
 	}
 }
