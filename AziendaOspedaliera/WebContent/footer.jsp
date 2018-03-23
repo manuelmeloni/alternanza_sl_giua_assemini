@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
 
 
-      <footer class="page-footer font-small blue pt-4 mt-4" >
+    <footer class="page-footer font-small blue pt-4 mt-4" >
 
     <!--Footer Links     -->
     <div class="container-fluid text-center text-md-left"  >
