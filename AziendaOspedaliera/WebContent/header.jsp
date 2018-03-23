@@ -20,10 +20,10 @@
       
   
     <ul class="nav navbar-nav">
-      <li><a href="#">Home</a></li>
-      <li><a href="chiSiamo.html">Chi siamo</a></li>
-      <li><a href="#">Dove Siamo</a></li>
-      <li><a href="#">News</a></li>
+      <li><a href="Home_Page.jsp">Home</a></li>
+      <li><a href="chiSiamo.jsp">Chi siamo</a></li>
+      <li><a href="DoveSiamo.jsp">Dove Siamo</a></li>
+      <li><a href="main.jsp">News</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
      <li class="nav-item dropdown">
