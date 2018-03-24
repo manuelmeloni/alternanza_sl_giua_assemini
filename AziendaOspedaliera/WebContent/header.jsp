@@ -11,7 +11,7 @@
         <span class="icon-bar"></span>
       </button>
       
-       <a class="navbar-brand" href="#"><span class=" glyphicon glyphicon-header"></span> &nbsp; Azienda Ospedaliera</a>
+       <a class="navbar-brand" href="Home_Page.jsp"><span class=" glyphicon glyphicon-header"></span> &nbsp; Azienda Ospedaliera</a>
       
       
        </div> 
@@ -28,10 +28,7 @@
     <ul class="nav navbar-nav navbar-right">
      <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pushpin"></span>Prenota visita </a>
-      <style type="text/css">
 
-        }
-      </style>
       <div class="dropdown-menu">
      <form action="/action_page.php">
         <div class="input-group">
