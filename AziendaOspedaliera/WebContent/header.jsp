@@ -17,8 +17,6 @@
        </div> 
      <span  class="col-sm-2">  </span>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      
-  
     <ul class="nav navbar-nav">
       <li><a href="Home_Page.jsp">Home</a></li>
       <li><a href="chiSiamo.jsp">Chi siamo</a></li>
@@ -69,6 +67,7 @@
      </form>
       </div>
     </li>
+    </ul>
      </div>
   </div>
 </nav>

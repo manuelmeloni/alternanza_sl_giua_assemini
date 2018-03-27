@@ -15,7 +15,9 @@
     <link href="css/fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="Fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
-  	
+  	<!-- scripts js -->
+  	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+    <script src="js/bootstrap.min.js"></script>
 
   </head>
   <body >
@@ -37,17 +39,5 @@ function closeNav() {
    </script>
 
 
-      
-
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-   
-    <script src="js/bootstrap.min.js"></script>
-
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
   </body>  
 </html>
