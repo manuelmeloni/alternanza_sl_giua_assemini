@@ -33,15 +33,18 @@
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     <input id="Codice Fiscale" type="text" class="form-control" name="codfis" placeholder="Codice Fiscale">
   </div>
+  
 <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
     <input id="Data" type="text" class="form-control" name="data" placeholder="GG/MM/AAAA">
   </div>
+
   <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
     <input id="Ora" type="hour" class="form-control" name="ora" placeholder="00:00">
   </div>
-      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pushpin"></span>Prenota</button>
+  
+      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;   Prenota</button>
      </form>
       </div>
     </li>
@@ -49,7 +52,7 @@
        <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>Accedi </a>
       <div class="dropdown-menu">
-     <form action="LoginChecker.jsp">
+     <form action="/action_page.php">
       <div class="form-group">
        <label for="email">Email:</label>
         <input type="email" class="form-control" id="email">
@@ -63,7 +66,7 @@
         <input class="form-check-input" type="checkbox"> Ricorda
        </label>
       </div>
-      <button type="submit" class="btn btn-primary" ><span class="glyphicon glyphicon-log-in"></span>Accedi</button>
+      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Accedi</button>
      </form>
       </div>
     </li>
