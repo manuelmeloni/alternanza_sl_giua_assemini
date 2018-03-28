@@ -21,9 +21,9 @@ public class LoginDAO extends BaseDAO{
 			
 			ResultSet rs = getDbm().performQuery(query);
 				int id = rs.getInt("id");
-				String nome = rs.getString("titolo");
-				String cognome = rs.getString("sottotitolo");
-				int categoria = rs.getInt(1);
+				String nome = rs.getString("nome");
+				String cognome = rs.getString("cognome");
+				int categoria = rs.getInt("categoria");
 				String username = rs.getString("username");
 				String password= rs.getString("password");
 				
@@ -31,10 +31,14 @@ public class LoginDAO extends BaseDAO{
 				return log;
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
+			Login log = new Login();
+			return log;
 		}
 
 	}
 	
-	
+	public Login checkUser(String username, String password) {
+		return getUser("select id,nome,cognome,categoria,username,password from dipendenti where username = "+username+" and password = "+password);
+	}
 	
 }

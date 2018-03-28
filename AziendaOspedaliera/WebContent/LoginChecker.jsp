@@ -14,8 +14,8 @@
 		//"dao" permette la connessione con il DB
 		LoginDAO dao = new LoginDAO();
 		//Creo un oggetto di tipo login, che ottiene i dati necessari al login
-		Login login = dao.getData();
-		
+		Login login = dao.CheckUser();
+		ControllerLogin contr= new ControllerLogin();
 		%>
 		
 </main>

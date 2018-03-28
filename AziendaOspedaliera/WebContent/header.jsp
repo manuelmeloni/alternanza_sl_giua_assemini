@@ -52,14 +52,14 @@
        <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>Accedi </a>
       <div class="dropdown-menu">
-     <form action="/action_page.php">
+     <form action="LoginChecker.jsp">
       <div class="form-group">
-       <label for="email">Email:</label>
-        <input type="email" class="form-control" id="email">
+       <label for="username">Username:</label>
+        <input type="username" class="form-control" id="username" name="user">
       </div>
       <div class="form-group">
        <label for="pwd">Password:</label>
-        <input type="password" class="form-control" id="pwd">
+        <input type="password" class="form-control" id="pwd" name="pw">
       </div>
       <div class="form-check">
        <label class="form-check-label">
