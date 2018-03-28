@@ -27,11 +27,14 @@ public class LoginDAO extends BaseDAO{
 				String username = rs.getString("username");
 				String password= rs.getString("password");
 				
-				Login current = new Login(id,nome,cognome,categoria,username,password);
-				
+				Login log = new Login(id,nome,cognome,categoria,username,password);
+				return log;
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
 		}
 
 	}
+	
+	
+	
 }
