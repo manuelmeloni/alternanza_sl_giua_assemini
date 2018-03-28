@@ -78,7 +78,7 @@ public class UtenteDAO extends BaseDAO {
 	 
 
 	public List<Utente> getUtentebyColor(int color) {
-		return getAllUtente("select utenti.NOME utenti.COGNOME from ricoveri,utenti where utenti.ID-UTENTE = ricoveri.utenti_ID-UTENTE and CODICE_COLORE ="+color+" ORDER BY utenti.COGNOME");
+		return getAllUtente("select utenti.NOME utenti.COGNOME from ricoveri,utenti where utenti.ID_UTENTE = ricoveri.utenti_ID_UTENTE and CODICE_COLORE ="+color+" ORDER BY utenti.COGNOME");
 	}
 	
 	public Utente getUtentebyCodFiscale(String codiceFiscale) {

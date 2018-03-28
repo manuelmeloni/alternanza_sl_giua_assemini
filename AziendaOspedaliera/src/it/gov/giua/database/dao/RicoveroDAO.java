@@ -52,9 +52,11 @@ public class RicoveroDAO extends BaseDAO {
 	 
 		 
 
-	public List<Ricovero> getRicoverobyUtente(String codiceFiscale,int ID_utente) {
-		return getAllRicovero("select ricoveri.* from ricoveri,utenti where utenti.ID-UTENTE = ricoveri.utenti_ID-UTENTE and utenti.CODICE_FISCALE ="+codiceFiscale+"and ricoveri.utenti_ID-UTENTE="+ID_utente);
+	public List<Ricovero> getRicoverobyUtente(String codiceFiscale,int codice_ricovero) {
+		return getAllRicovero("select * from ricoveri,utenti where utenti.ID_UTENTE = ricoveri.utenti_ID_UTENTE and utenti.CODICE_FISCALE ="+codiceFiscale+" and ricoveri.CODICE_RICOVERO="+codice_ricovero);
 	}
+	
+	
 	
 	
 	
