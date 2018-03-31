@@ -9,7 +9,7 @@ public class Dipendenti {
 	private String nome;
 	private String cognome;
 	private String codice_fiscale;
-	private String mail;
+	private String email;
 	private Date data_assunzione;
 	private Date data_licenziamento;
 	private int categoria; //0 per Amministratore, 1 Dipendente Altro, 2 Dipendente Medico
@@ -22,7 +22,7 @@ public class Dipendenti {
 			nome = "";
 			cognome = "";
 			codice_fiscale = "";
-			mail = "";
+			email = "";
 			Date data_assunzione = new Date(); 
 			Date data_licenziamento = new Date();
 			categoria = 000;
@@ -37,7 +37,7 @@ public class Dipendenti {
 			this.nome = nome;
 			this.cognome = cognome;
 			this.codice_fiscale = codice_fiscale;
-			this.mail = mail;
+			this.email = email;
 			this.data_assunzione = data_assunzione;
 			this.data_licenziamento = data_licenziamento;
 			this.categoria = categoria;
@@ -80,12 +80,12 @@ public class Dipendenti {
 			this.codice_fiscale = codice_fiscale;
 		}
 
-		public String getMail() {
-			return mail;
+		public String getEmail() {
+			return email;
 		}
 
-		public void setMail(String mail) {
-			this.mail = mail;
+		public void setEmail(String email) {
+			this.email = email;
 		}
 
 		public Date getData_assunzione() {

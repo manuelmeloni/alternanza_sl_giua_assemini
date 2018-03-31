@@ -2,19 +2,19 @@ package it.gov.giua.model;
 
 public class Login {
 	private int id;
+	private int categoria;
 	private String nome;
 	private String cognome;
-	private int categoria;
 	private String username;
 	private String password;
 	
 	public Login() {
-		this.id=0;
-		this.nome="nome";
-		this.cognome="cognome";
-		this.categoria=1;
-		this.username="username";
-		this.password="password";
+		id=0;
+		nome="undefined";
+		cognome="undefined";
+		categoria=1;
+		username="undefined";
+		password="undefined";
 	}
 	
 	public Login(int id, String nome, String cognome, int categoria, String username, String password){

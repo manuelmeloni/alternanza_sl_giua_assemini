@@ -9,6 +9,7 @@
 		<meta name="author" content="Progetto A S/L Accenture - ITIS Michele Giua"/>
 		<meta name="description" content="AziendaOspedaliera"/>
 		<meta name="generator" content="Sublime Text 3, Eclipse Java EE, Blocco Note"/>
+		
 		<link rel="stylesheet" type="text/css" href="Fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
 		<link rel="stylesheet" type="text/css" href="css/myStyle.css"/>
@@ -29,9 +30,7 @@
 	</head>
 	<body>
 		<%@ include file = "header.jsp" %>
-		<center>
 		<%@ include file = "DoveSiamo.html" %>
-		</center>
 		<%@ include file = "footer.jsp" %>
 	</body>
 	

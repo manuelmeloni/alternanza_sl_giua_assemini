@@ -4,7 +4,7 @@
 <%@page import="it.gov.giua.database.dao.NewsDAO"%>
 <%@page import="it.gov.giua.model.News"%>
 
-<main> <main role="main"> <%
+<main role="main"> <%
 		//"dao" permette la connessione con il DB
 		NewsDAO dao = new NewsDAO();
 		//Creo un oggetto di tipo news, che ottiene le informazioni delle news principali
@@ -46,8 +46,11 @@
 					</div>
 				</div>
 			</div>
+		</div>
 	<%
 	
 	}
 	%>
+	</div>
+</div>
 </main>

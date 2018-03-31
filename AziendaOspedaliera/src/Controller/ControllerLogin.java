@@ -31,7 +31,9 @@ public class ControllerLogin extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+		request.getParameter("user");
+		request.getParameter("pw");
 	}
 
 	/**
