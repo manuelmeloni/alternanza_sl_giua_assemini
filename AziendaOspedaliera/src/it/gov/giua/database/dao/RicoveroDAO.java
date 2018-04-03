@@ -56,8 +56,14 @@ public class RicoveroDAO extends BaseDAO {
 		return getAllRicovero("select * from ricoveri,utenti where utenti.ID_UTENTE = ricoveri.utenti_ID_UTENTE and utenti.CODICE_FISCALE ="+codiceFiscale+" and ricoveri.CODICE_RICOVERO="+codice_ricovero);
 	}
 	
+	//metodo per inserire un ricovero nel DB (nuovo)
+	public void setRicovero(Ricovero r) throws SQLException {
+		
+		String query="Insert into ricoveri (diagnosi,terapia,codice_ricovero) values ("+r.getDiagnosi()+ "," + r.getTerapia()+","+r.getCodice_ricovero()+")";
+		ResultSet rs = getDbm().performQuery(query);
+		
 	
-	
+	}
 	
 	
 	
