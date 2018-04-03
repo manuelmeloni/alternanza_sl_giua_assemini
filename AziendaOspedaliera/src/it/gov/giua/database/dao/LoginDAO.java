@@ -1,5 +1,8 @@
 package it.gov.giua.database.dao;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,7 +10,6 @@ import java.util.List;
 import java.util.logging.Level;
 
 import it.gov.giua.model.Login;
-import it.gov.giua.model.News;
 
 public class LoginDAO extends BaseDAO{
 
@@ -37,8 +39,34 @@ public class LoginDAO extends BaseDAO{
 
 	}
 	
-	public Login checkUser(String username, String password) {
+	/*
+	 * public Login checkUser(String username, String password) {
 		return getUser("select id,nome,cognome,categoria,username,password from dipendenti where username = "+username+" and password = "+password);
 	}
+	*/
+	 public static boolean checkUser(String username,String pass) 
+     {
+      boolean st =false;
+      try{
+
+	 //loading drivers for mysql
+         Class.forName("com.mysql.jdbc.Driver");
+
+ 	 //creating connection with the database 
+         Connection con=DriverManager.getConnection
+                        ("jdbc:mysql:/localhost:3306","root","aziendaospedaliera");
+         PreparedStatement ps =con.prepareStatement
+        		 ("select * from dipendenti where username = "+username+" and pass = "+pass);
+         ps.setString(1, username);
+         ps.setString(2, pass);
+         ResultSet rs =ps.executeQuery();
+         st = rs.next();
+        
+      }catch(Exception e)
+      {
+          e.printStackTrace();
+      }
+         return st;                 
+  }   
 	
 }

@@ -1,12 +1,17 @@
 package Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.apache.jasper.tagplugins.jstl.core.Out;
 
 import it.gov.giua.database.dao.LoginDAO;
 import it.gov.giua.model.Login;
@@ -29,31 +34,39 @@ public class ControllerLogin extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		request.getParameter("user");
 		request.getParameter("pw");
 	}
-
+*/
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-	
-	protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       
-		String username = request.getParameter("user");    
-		String password = request.getParameter("pw");
-		
-		LoginDAO login= new LoginDAO();
-		Login log= new Login();
-		log= login.checkUser(username, password);
-		
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        
+        String username = request.getParameter("user");
+        String pass = request.getParameter("pw");
+        
+        if(LoginDAO.checkUser(username, pass))
+        {
+            RequestDispatcher rs = request.getRequestDispatcher("Main.jsp");
+            rs.forward(request, response);
+        }
+        else
+        {
+           out.println("Username or Password incorrect");
+           RequestDispatcher rs = request.getRequestDispatcher("Home_Page.jsp");
+           rs.include(request, response);
+        }
+    }  
+	
+  protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
        /* if (request.getParameter("marca") != null)
         {
          //servlet chiamata da jsp
@@ -85,7 +98,6 @@ public class ControllerLogin extends HttpServlet {
             */        
                     
                 }
-      
 
 	
 }

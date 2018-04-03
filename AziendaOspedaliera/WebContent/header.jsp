@@ -52,7 +52,7 @@
        <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>Accedi </a>
       <div class="dropdown-menu">
-     <form action="LoginChecker.jsp">
+     <form action="ControllerLogin" method="post">
       <div class="form-group">
        <label for="username">Username:</label>
         <input type="username" class="form-control" id="username" name="user">
@@ -66,7 +66,7 @@
         <input class="form-check-input" type="checkbox"> Ricorda
        </label>
       </div>
-      <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Accedi</button>
+      <button type="submit" value="login" class="btn btn-primary"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Accedi</button>
      </form>
       </div>
     </li>
