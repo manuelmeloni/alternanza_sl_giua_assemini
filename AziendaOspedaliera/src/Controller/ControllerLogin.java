@@ -51,15 +51,14 @@ public class ControllerLogin extends HttpServlet {
         
         String username = request.getParameter("user");
         String pass = request.getParameter("pw");
-        
         if(LoginDAO.checkUser(username, pass))
         {
-            RequestDispatcher rs = request.getRequestDispatcher("Main.jsp");
+            RequestDispatcher rs = request.getRequestDispatcher("ControllerAdminEmployee");
             rs.forward(request, response);
         }
         else
-        {
-           out.println("Username or Password incorrect");
+        {			
+           out.println("L'username o la password sono incorrette!");
            RequestDispatcher rs = request.getRequestDispatcher("Home_Page.jsp");
            rs.include(request, response);
         }

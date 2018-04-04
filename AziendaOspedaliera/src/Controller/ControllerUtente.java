@@ -31,7 +31,7 @@ public class ControllerUtente extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		UtenteDAO u =new UtenteDAO();
-		if(u.getUtentebyCodFiscale(req.getParameter("codcieFiscale"))==null){
+		if(u.getUtentebyCodFiscale(req.getParameter("codiceFiscale"))==null){
 			InserisciUtente(req,resp);		//deve restituire la pagina per inserire i dati dell'utente (mancante)
 			
 		}

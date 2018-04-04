@@ -55,7 +55,7 @@
      <form action="ControllerLogin" method="post">
       <div class="form-group">
        <label for="username">Username:</label>
-        <input type="username" class="form-control" id="username" name="user">
+        <input type="text" class="form-control" id="username" name="user">
       </div>
       <div class="form-group">
        <label for="pwd">Password:</label>

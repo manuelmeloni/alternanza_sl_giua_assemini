@@ -46,19 +46,22 @@ public class LoginDAO extends BaseDAO{
 	*/
 	 public static boolean checkUser(String username,String pass) 
      {
+		 
       boolean st =false;
       try{
-
+    	  System.out.println("SONO DENTRO AL TRY");
 	 //loading drivers for mysql
          Class.forName("com.mysql.jdbc.Driver");
 
  	 //creating connection with the database 
          Connection con=DriverManager.getConnection
-                        ("jdbc:mysql:/localhost:3306","root","aziendaospedaliera");
+                        ("jdbc:mysql://localhost:3306/aziendaospedaliera","root","");
          PreparedStatement ps =con.prepareStatement
-        		 ("select * from dipendenti where username = "+username+" and pass = "+pass);
+        		 ("select * from dipendenti where USERNAME = ? and PASSWORD = ?");
+        System.out.println("HO SCRITTO LA QUERY");
          ps.setString(1, username);
          ps.setString(2, pass);
+         System.out.println("HO PASSATO "+username+" e "+pass+" ALLA QUERY");
          ResultSet rs =ps.executeQuery();
          st = rs.next();
         

@@ -20,7 +20,7 @@ public class NewsDAO extends BaseDAO {
 		List<News> news = new ArrayList<News>();
 
 		try {
-			ResultSet rs = getDbm().performQuery(query);
+			ResultSet rs = getDbm().performQuery(query); 	
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String titolo = rs.getString("titolo");
