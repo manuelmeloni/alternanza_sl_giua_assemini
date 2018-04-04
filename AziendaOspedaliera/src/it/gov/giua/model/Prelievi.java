@@ -19,14 +19,8 @@ public class Prelievi {
 		super();
 	}
 	
-	/**
-	 * 
-	 * @param titolo Titolo della news da creare
-	 * @param sottotitolo Sottotitolo della news da creare
-	 * @param testo Testo della news da creare
-	 * @param abilitato Flag che indica se la news è abilitata o meno
-	 * @param tipo Tipo della news: esempio C (corso), G (generica), S (specialistica)
-	 */
+	
+	
 	public Prelievi(int id_prelievo, Date data_ora_prelievo, Date data_ora_fine , String codice_visita,int dipendenti_id_dipendente,String referto) {
 		super();
 		this.id_prelievo=id_prelievo;	
