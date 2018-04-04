@@ -11,8 +11,7 @@ import java.util.Date;
 
 import javax.xml.crypto.Data;
 
-
-
+import it.gov.giua.model.Ricovero;
 import it.gov.giua.model.Utente;
 
 public class UtenteDAO extends BaseDAO {
@@ -85,6 +84,13 @@ public class UtenteDAO extends BaseDAO {
 		return getUtente("select * from utenti where utenti.CODICE_FISCALE = "+codiceFiscale);
 	}
 	
+	//metodo per inserire un utente nel DB (nuovo)
+	public void setUtente(Utente u) throws SQLException {
+		
+		String query="Insert into utenti (nome,cognome,codiceFiscale,) values ("+u.getNome()+ "," + u.getCognome()+","+u.getCodiceFiscale()+")";
+		ResultSet rs = getDbm().performQuery(query);
+		
 	
+	}
 	
 }

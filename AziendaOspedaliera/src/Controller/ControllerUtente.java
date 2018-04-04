@@ -47,7 +47,7 @@ public class ControllerUtente extends HttpServlet {
             throws ServletException, IOException {
        
 		
-		response.getWriter().write("utente.jsp");		//pagina per inserire i dati (mancante)
+		// response.getWriter().write("utente.jsp");		//pagina per inserire i dati (mancante)
 		Utente u=new Utente();
 		u.setCodiceFiscale(request.getParameter("codiceFiscale"));
 		u.setCognome(request.getParameter("Cognome"));    

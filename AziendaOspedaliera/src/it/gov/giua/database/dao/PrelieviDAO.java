@@ -10,6 +10,7 @@ import java.util.Date;
 import java.util.Calendar;
 
 import it.gov.giua.model.Prelievi;
+import it.gov.giua.model.Ricovero;
 
 
 public class PrelieviDAO extends BaseDAO {
@@ -33,7 +34,7 @@ public class PrelieviDAO extends BaseDAO {
 				String referto = rs.getString("referto");
 				int dipendenti_id_dipendente = rs.getInt("dipendenti_id_dipendente");
 
-				Prelievi current = new Prelievi( id_prelievo,  data_ora_prelievo,  data_ora_fine ,  codice_visita, dipendenti_id_dipendente);
+				Prelievi current = new Prelievi( id_prelievo,  data_ora_prelievo,  data_ora_fine ,  codice_visita, dipendenti_id_dipendente,referto);
 				current.setId_prelievo(id_prelievo);
 				Prelievi.add(current);
 			}
@@ -49,14 +50,15 @@ public class PrelieviDAO extends BaseDAO {
 	public List<Prelievi> getPrelievoByCodicePrelievi() {
 		return getAllPrelievi("select * from utenti, prelievi where utenti.ID_UTENTE = prelievi.utenti_ID_UTENTE AND prelievi.CODICE_VISITA = 'SALMO';");
 	}
-	/*this.getUtentebyCodFiscale(){
-		super();
-	}*/
 	
+	public void setPrelievi(Prelievi p) throws SQLException {
+		
+		String query="Insert into prelievi (codice_visita) values ("+p.getCodice_visita()+")";
+		ResultSet rs = getDbm().performQuery(query);
+		
 	
+	}
 	
-	/*public News getSingleNews(int id) {
-		return getAllNews("select * from news where abilitato = 1 and id ="+id).get(0);
-	}*/
 }
+
 

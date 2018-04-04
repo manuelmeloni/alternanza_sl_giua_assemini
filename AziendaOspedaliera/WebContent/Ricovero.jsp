@@ -18,7 +18,7 @@
   <body >
 	<%@ include file = "header.jsp" %>
 	<center>
-	   <%@ include file = "ricovero.html" %>
+	   <%@ include file = "inserimentoDati.jsp" %>
 	</center>
 	<%@ include file = "footer.jsp" %>
 

@@ -27,13 +27,14 @@ public class Prelievi {
 	 * @param abilitato Flag che indica se la news è abilitata o meno
 	 * @param tipo Tipo della news: esempio C (corso), G (generica), S (specialistica)
 	 */
-	public Prelievi(int id_prelievo, Date data_ora_prelievo, Date data_ora_fine , String codice_visita,int dipendenti_id_dipendente) {
+	public Prelievi(int id_prelievo, Date data_ora_prelievo, Date data_ora_fine , String codice_visita,int dipendenti_id_dipendente,String referto) {
 		super();
 		this.id_prelievo=id_prelievo;	
 		this.data_ora_prelievo=data_ora_prelievo;
 		this.data_ora_fine=data_ora_fine;
 		this.codice_visita=codice_visita;
 		this.dipendenti_id_dipendente=dipendenti_id_dipendente;
+		this.referto=referto;
 	}
 
 
