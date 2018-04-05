@@ -6,25 +6,25 @@
         <div class="row">
             <div class="col-md-6" >
             	<br/>
-                <h5 class="text-uppercase">Contattaci subito</h5>
+                <h5 class="text-uppercase" style="color:rgb(48, 127, 224)">Contattaci subito</h5>
                 <p style="color: #AAAAAA">Numero di telefono: (+39) 000 000 0000</p>
-                <p style="color: #AAAAAA">Numero verde: 800 000 0000</p>
+                <p style="color: #AAAAAA"><!--<i class="glyphicon glyphicon-earphone" style="color:green"></i>--> Numero verde <i class="glyphicon glyphicon-earphone" style="color:green"></i> : 800 000 0000</p>
             </div>
             <div class="col-md-6">
             	<br/>
-            	<h5 class="text-uppercase">Contattaci anche seguendoci nei Social:</h5>   
+            	<h5 class="text-uppercase" style="color:rgb(48, 127, 224)">Contattaci anche seguendoci nei Social:</h5>   
                	<ul class="list-unstyled">
                		<p style="font-size: 30px; color: #AAAAAA">
-				        <a style="color: #CCCCCC" href="#">
+				        <a style="color: #CCCCCC; text-decoration:none" href="#">
 				        	<i class="fab fa-facebook"></i>
 				        </a>           
-				        <a style="color: #CCCCCC" href="#">
+				        <a style="color: #CCCCCC; text-decoration:none" href="#">
 				        	<i class="fab fa-twitter-square"></i>
 				        </a>         
-				        <a style="color: #CCCCCC" href="#">
+				        <a style="color: #CCCCCC; text-decoration:none" href="#">
 				        	<i class="fab fa-instagram"></i>
 				        </a>          
-				        <a style="color: #CCCCCC" href="#">
+				        <a style="color: #CCCCCC; text-decoration:none" href="#">
 				        	<i class="fab fa-whatsapp-square"></i>
 				        </a>
 			        </p>
