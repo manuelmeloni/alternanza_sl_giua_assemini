@@ -54,8 +54,7 @@ public class LoginDAO extends BaseDAO{
          Class.forName("com.mysql.jdbc.Driver");
 
  	 //creating connection with the database 
-         Connection con=DriverManager.getConnection
-                        ("jdbc:mysql://localhost:3306/aziendaospedaliera","root","");
+         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/aziendaospedaliera","root","");
          PreparedStatement ps =con.prepareStatement
         		 ("select * from dipendenti where USERNAME = ? and PASSWORD = ?");
         System.out.println("HO SCRITTO LA QUERY");
@@ -71,5 +70,26 @@ public class LoginDAO extends BaseDAO{
       }
          return st;                 
   }   
-	
+	 public static int getCategoria(String username) {
+		 try{
+	    	  System.out.println("SONO DENTRO AL TRY");
+		 //loading drivers for mysql
+	         Class.forName("com.mysql.jdbc.Driver");
+	 	 //creating connection with the database 
+	         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/aziendaospedaliera","root","");
+	         PreparedStatement ps =con.prepareStatement("select * from dipendenti where USERNAME = '"+username+"'");
+	        System.out.println("HO SCRITTO LA QUERY");
+	        ResultSet rs =ps.executeQuery();
+	        rs.next();
+	        System.out.println("CATEGORIA: "+rs.getInt("CATEGORIA"));
+	         return rs.getInt("CATEGORIA");
+	         
+	        
+	      }catch(Exception e)
+	      {
+	          e.printStackTrace();
+	          return -1;  
+	      }
+	                     
+	 }
 }
