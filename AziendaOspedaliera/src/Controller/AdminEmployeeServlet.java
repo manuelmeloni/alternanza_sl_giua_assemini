@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import it.gov.giua.database.dao.LoginDAO;
+import it.gov.giua.model.Login;
+
 @WebServlet("/AdminEmployeeServlet")
 public class AdminEmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -30,6 +33,9 @@ public class AdminEmployeeServlet extends HttpServlet {
 	        out.println("contenuto di sessionRole: ( "+sessionRole+" )");
 	        if(sessionRole==0) {
 	        	out.println("Benvenuto Admin "+sessionUsername);
+	        	Login login= new Login();
+	        	login.setCategoria(sessionRole);
+	        	login.setUsername(sessionUsername);
 	        }else 
 	        	out.println("Benvenuto Dottor "+sessionUsername);
 	}

@@ -54,7 +54,7 @@ public class LoginServlet extends HttpServlet {
         if(LoginDAO.checkUser(username, pass))
         {
         	
-            RequestDispatcher rs = request.getRequestDispatcher("ControllerAdminEmployee");
+            RequestDispatcher rs = request.getRequestDispatcher("AdminEmployeeServlet");
             rs.forward(request, response);
         }
         else
