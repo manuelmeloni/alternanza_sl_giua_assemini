@@ -1,5 +1,5 @@
 package it.gov.giua.model;
-
+import java.util.Date;
 import java.time.LocalDate;
 
 public class Dipendente {
@@ -7,13 +7,13 @@ public class Dipendente {
 	//Attributi
 	private static int id = 0;
 	private int id_dipendente;
-	private DateOf data_nascita;
+	private Date data_nascita;
 	private String nome;
 	private String cognome;
 	private String codice_fiscale;
 	private String email;
-	private DateOf data_assunzione;
-	private DateOf data_licenziamento;
+	private Date data_assunzione;
+	private Date data_licenziamento;
 	private int categoria; //0 per Amministratore, 1 Dipendente Medico, 2 Dipendente Altro
 	private String username;
 	private String password;
@@ -21,13 +21,13 @@ public class Dipendente {
 	//Costruttori
 	public Dipendente() {
 		this.setIdDipendente();
-		this.data_nascita = new DateOf();
+		this.data_nascita = new Date();
 		nome = "Sconosciuto";
 		cognome = "Sconosciuto";
 		codice_fiscale = "Sconosciuto";
 		email = "Sconosciuto";
-		this.data_assunzione = new DateOf();
-		this.data_licenziamento = new DateOf();
+		this.data_assunzione = new Date();
+		this.data_licenziamento = new Date();
 		categoria = 000;
 		username = "Sconosciuto";
 		password = "Sconosciuto";			
@@ -45,11 +45,11 @@ public class Dipendente {
 		this.username = d.getUsername();
 		this.password = d.getPassword();
 	}
-	public Dipendente(DateOf data_nascita, String nome, String cognome, String codice_fiscale, String email, DateOf data_assunzione, DateOf data_licenziamento, int categoria, String username, String password) {
+	public Dipendente(Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password) {
 		this.setIdDipendente();
 		boolean state = false;
 		state = this.setDataNascita(data_nascita);
-		this.data_nascita = (state) ? this.data_nascita : new DateOf(LocalDate.now().getYear(), LocalDate.now().getMonthValue(), LocalDate.now().getDayOfMonth());
+		this.data_nascita = (state) ? this.data_nascita : new Date(LocalDate.now().getYear(), LocalDate.now().getMonthValue(), LocalDate.now().getDayOfMonth());
 		state = this.setNome(nome);
 		this.nome = (state) ? this.nome : "Sconosciuto";
 		state = this.setCognome(cognome);
@@ -59,9 +59,9 @@ public class Dipendente {
 		state = this.setEmail(email);
 		this.email = (state) ? this.email : "Sconosciuto";
 		state = this.setDataAssunzione(data_assunzione);
-		this.data_assunzione = (state) ? this.data_assunzione : new DateOf(0, 0, 0);
+		this.data_assunzione = (state) ? this.data_assunzione : new Date(0, 0, 0);
 		state = this.setDataLicenziamento(data_licenziamento);
-		this.data_licenziamento = (state) ? this.data_licenziamento : new DateOf(0, 0, 0);
+		this.data_licenziamento = (state) ? this.data_licenziamento : new Date(0, 0, 0);
 		state = this.setCategoria(categoria);
 		this.categoria = (state) ? this.categoria : 2;
 		state = this.setUsername(username);
@@ -77,13 +77,13 @@ public class Dipendente {
 	public int getIdDipendente() {
 		return this.id_dipendente;
 	}
-	public DateOf getDataNascita() { //restituisce la data_nascita come oggetto LocalDate
+	public Date getDataNascita() { //restituisce la data_nascita come oggetto LocalDate
 		return this.data_nascita;
 	}
 	public String getDataNascitaString() { //restituisce la data_nascita come oggetto String, nel formato di SQL (AAAA-MM-GG)
 		return this.data_nascita.getYear() + "-" + this.data_nascita.getMonth() + "-" + this.data_nascita.getDay();
 	}
-	public boolean setDataNascita(DateOf data_nascita) {
+	public boolean setDataNascita(Date data_nascita) {
 		if(data_nascita.getYear() >= LocalDate.now().getYear() - 70 && data_nascita.getYear() <= LocalDate.now().getYear()) {
 			this.data_nascita = data_nascita;
 			return true;
@@ -154,13 +154,13 @@ public class Dipendente {
 		else
 			return false;
 	}
-	public DateOf getDataAssunzione() {
+	public Date getDataAssunzione() {
 		return this.data_assunzione;
 	}
 	public String getDataAssunzioneString() { //restituisce la data come oggetto String nel formato AAAA-MM-GG
 		return this.data_assunzione.getYear() + "-" + this.data_assunzione.getMonth() + "-" + this.data_assunzione.getDay();
 	}
-	public boolean setDataAssunzione(DateOf data_assunzione) {
+	public boolean setDataAssunzione(Date data_assunzione) {
 		if(data_assunzione.getYear() >= LocalDate.now().getYear() - 70 && data_assunzione.getYear() <= LocalDate.now().getYear()) {
 			this.data_assunzione = data_assunzione;
 			return true;
@@ -168,13 +168,13 @@ public class Dipendente {
 		else
 			return false;
 	}
-	public DateOf getDataLicenziamento() {
+	public Date getDataLicenziamento() {
 		return data_licenziamento;
 	}
 	public String getDataLicenziamentoString() { //restituisce la data come oggetto String nel formato AAAA-MM-GG
 		return this.data_licenziamento.getYear() + "-" + this.data_licenziamento.getMonth() + "-" + this.data_licenziamento.getDay();
 	}
-	public boolean setDataLicenziamento(DateOf data_licenziamento) {
+	public boolean setDataLicenziamento(Date data_licenziamento) {
 		if(data_licenziamento.getYear() >= this.data_assunzione.getYear() && data_licenziamento.getYear() <= LocalDate.now().getYear()) {
 			this.data_licenziamento = data_licenziamento;
 			return true;

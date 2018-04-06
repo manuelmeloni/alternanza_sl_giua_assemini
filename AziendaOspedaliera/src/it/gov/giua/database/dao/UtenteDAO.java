@@ -15,7 +15,7 @@ import it.gov.giua.model.Ricovero;
 import it.gov.giua.model.Utente;
 
 public class UtenteDAO extends BaseDAO {
-
+	
 	public UtenteDAO() {
 		super();
 
@@ -28,14 +28,16 @@ public class UtenteDAO extends BaseDAO {
 		try {
 			ResultSet rs = getDbm().performQuery(query);
 			while (rs.next()) {
-				int ID = rs.getInt("ID");
-				String nome = rs.getString("nome");
-				String cognome = rs.getString("cognome");
-				Date nascita = rs.getDate("nascita");
-				String codiceFiscale = rs.getString("codice fiscale");
+				int ID = rs.getInt("ID_UTENTE");
+				int id_reparto = rs.getInt("reparti_ID_REPARTO");
+				String nome = rs.getString("NOME");
+				String cognome = rs.getString("COGNOME");
+				Date nascita = rs.getDate("DATA_NASCITA");
+				String codiceFiscale = rs.getString("CODICE_FISCALE");
+				
 				
 
-				Utente current = new Utente(nascita,nome,cognome,codiceFiscale);
+				Utente current = new Utente(ID,id_reparto,nascita,nome,cognome,codiceFiscale);
 				current.setID(ID);
 				utenti.add(current);
 			}

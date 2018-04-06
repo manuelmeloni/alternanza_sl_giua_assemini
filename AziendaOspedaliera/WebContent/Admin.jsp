@@ -10,7 +10,6 @@
 <body>
 	<%
 	Login login= new Login(); 
-	
 	%>
 	<a href="LogoutServlet"><input type="button" value="Disconnettiti"/></a>
 </body>

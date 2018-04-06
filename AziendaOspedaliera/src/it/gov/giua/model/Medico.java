@@ -1,5 +1,5 @@
 package it.gov.giua.model;
-
+import  java.util.Date;
 import java.time.LocalDate;
 
 public class Medico extends Dipendente {
@@ -27,7 +27,7 @@ public class Medico extends Dipendente {
 		state = this.setReparto(reparto);
 		this.reparto = (state) ? this.reparto : "Sconosciuto";
 	}
-	public Medico(DateOf data_nascita, String nome, String cognome, String codice_fiscale, String email, DateOf data_assunzione, DateOf data_licenziamento, int categoria, String username, String password, String specializzazione, String reparto) {
+	public Medico(Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password, String specializzazione, String reparto) {
 		super(data_nascita, nome, cognome, codice_fiscale, email, data_assunzione, data_licenziamento, categoria, username, password);
 		
 	}
