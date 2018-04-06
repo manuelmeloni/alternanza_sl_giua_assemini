@@ -32,17 +32,15 @@
         <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     <input id="Codice Fiscale" type="text" class="form-control" name="codfis" placeholder="Codice Fiscale">
+       
+      <input class="form-control" type="datetime-Local" name="visita">
+
+     </form>
+  
   </div>
   
-<div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-    <input id="Data" type="text" class="form-control" name="data" placeholder="GG/MM/AAAA">
-  </div>
+    
 
-  <div class="input-group">
-    <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-    <input id="Ora" type="hour" class="form-control" name="ora" placeholder="00:00">
-  </div>
   
       <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-pushpin"></span>&nbsp;   Prenota</button>
      </form>
