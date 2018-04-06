@@ -42,7 +42,8 @@ public class LoginServlet extends HttpServlet {
         
         String username = request.getParameter("user");
         String pass = request.getParameter("pw");
-        int categoria= LoginDAO.getCategoria(username);
+        LoginDAO login= new LoginDAO();
+        int categoria= login.getCategoria(username);
         //utilizzo delle variabili di sessione per tenere salvato, durante il corso delle jsp, il nomeutente del dottore/amministratore
         //setto come attributo di sessione l'username
         
@@ -51,7 +52,7 @@ public class LoginServlet extends HttpServlet {
         //mi ricavo l'attributo di sessione per testarlo
         sessionUsername= (String) session.getAttribute("username");
         out.println("Scope della sessione "+sessionUsername);
-        if(LoginDAO.checkUser(username, pass))
+        if(login.checkUser(username, pass))
         {
         	
             RequestDispatcher rs = request.getRequestDispatcher("AdminEmployeeServlet");
