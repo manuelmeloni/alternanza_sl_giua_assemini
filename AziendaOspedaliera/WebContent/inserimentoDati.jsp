@@ -18,7 +18,7 @@
 
 <form action="ControllerUtente" method="POST">
 
-Coidce Fiscale: <input type="text" maxlength="16" name="codiceFiscale">
+Codice Fiscale: <input type="text" maxlength="16" name="codiceFiscale">
 <input type="submit">
 
 
