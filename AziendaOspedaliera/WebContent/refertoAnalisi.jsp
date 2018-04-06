@@ -4,12 +4,17 @@
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Referto analisi</title>
 <head>
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/myStyle.css"/>
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
   	<link rel="stylesheet" type="text/css" href="Fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
+  	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   	<style type="text/css">
 			body { font-family: 'Montserrat'; }
 			.horizontal_space { width: 100%; height: 20px; float: left; }
@@ -37,30 +42,55 @@
   		}
   		#img{
   			float: left;
-  			overflow: auto;
   			
+  			padding-left:100px;
 
 
   		}
   		h1{
   			color:royalblue;
   			 text-align: left;
-  			 padding-top: 45px;
+  			 padding-top: ;
   			 float: right;
-  			 padding-right: 600px;
-  			 
-  			
-
+  			 padding-right:40px;
   			
   		}
+  		html {
+    position: relative;
+    min-height: 100%;
+}
+		body {
+		  
+		    margin: 50px 0;
+		}
+		.container {
+			
+		    width: 80%;
+		    margin: 0 auto;
+		 
+		    min-height: calc(100vh - 100px);
+		}
+	
   	</style>
-  	<div id="header2">
-  		<div style="padding-left: 250px;">
-  			<img src="images/imgReferti.jpg" style="height:150px;width: 150px;;">
-  			<h1 align="middle">	Referti e analisi mediche paziente</h1>
-  		</div>
-  	</div>	
-  		<div style="background-color: #DADADA ">
+  	
+
+<body>
+
+<div class="container-fluid">
+  <div class="row" style=" background-color:#CACACA ;  width: 100%; height: 170px;">
+  <div class="col-xs-12 col-sm-6 col-md-8 col-sm-4">
+ 
+ 	 <h1 align="middle">	 <img src="images/imgReferti.jpg" style="height:150px;width: 190px; padding-bottom:20px; padding-right:30px">Referti e analisi mediche paziente</h1>
+  
+  </div>
+  
+    
+    </div>
+  
+  </div>
+
+  		
+  		<div class="container" style="background-color: #DADADA ">
   			<p>Prendere informazioni dal db</p><br>
   			<p>Prendere informazioni dal db</p><br>
   			<p>Prendere informazioni dal db</p><br>
