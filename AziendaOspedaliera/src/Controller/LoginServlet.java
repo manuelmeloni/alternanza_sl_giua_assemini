@@ -17,30 +17,20 @@ import it.gov.giua.database.dao.LoginDAO;
 import it.gov.giua.model.Login;
 
 /**
- * Servlet implementation class ControllerLogin
+ * Servlet implementation class LoginServlet
  */
-@WebServlet("/ControllerLogin")
-public class ControllerLogin extends HttpServlet {
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public ControllerLogin() {
+	String sessionUsername;  
+	int sessionRole;
+    
+    public LoginServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	/*protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.setContentType("text/html");
-		request.getParameter("user");
-		request.getParameter("pw");
-	}
-*/
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -48,11 +38,22 @@ public class ControllerLogin extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
         
         String username = request.getParameter("user");
         String pass = request.getParameter("pw");
+        int categoria= LoginDAO.getCategoria(username);
+        //utilizzo delle variabili di sessione per tenere salvato, durante il corso delle jsp, il nomeutente del dottore/amministratore
+        //setto come attributo di sessione l'username
+        
+        session.setAttribute("username", username);
+        session.setAttribute("role", categoria);	
+        //mi ricavo l'attributo di sessione per testarlo
+        sessionUsername= (String) session.getAttribute("username");
+        out.println("Scope della sessione "+sessionUsername);
         if(LoginDAO.checkUser(username, pass))
         {
+        	
             RequestDispatcher rs = request.getRequestDispatcher("ControllerAdminEmployee");
             rs.forward(request, response);
         }

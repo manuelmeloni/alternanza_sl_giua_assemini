@@ -16,7 +16,7 @@
 	ControllerUtente CU=new ControllerUtente();
 	%>
 
-<form action="ControllerUtente.java" method="POST">
+<form action="ControllerUtente" method="POST">
 
 Coidce Fiscale: <input type="text" maxlength="16" name="codiceFiscale">
 <input type="submit">
@@ -26,7 +26,7 @@ Coidce Fiscale: <input type="text" maxlength="16" name="codiceFiscale">
 
 
 
-<form action="ControllerRicovero.java" method="POST">
+<form action="ControllerRicovero" method="POST">
 
 	Diagnosi:<textarea name="Diagnosi"> </textarea>
 	<br>

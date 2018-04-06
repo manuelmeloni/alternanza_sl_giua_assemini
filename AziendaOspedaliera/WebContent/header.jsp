@@ -28,7 +28,7 @@
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-pushpin"></span>Prenota visita </a>
 
       <div class="dropdown-menu">
-     <form action="/action_page.php">
+     <form action="ControllerReferti" method="post">
         <div class="input-group">
     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
     <input id="Codice Fiscale" type="text" class="form-control" name="codfis" placeholder="Codice Fiscale">
@@ -52,7 +52,7 @@
        <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>Accedi </a>
       <div class="dropdown-menu">
-     <form action="ControllerLogin" method="post">
+     <form action="LoginServlet" method="post">
       <div class="form-group">
        <label for="username">Username:</label>
         <input type="text" class="form-control" id="username" name="user">
