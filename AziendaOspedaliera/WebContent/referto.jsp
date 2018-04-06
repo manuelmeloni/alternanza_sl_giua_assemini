@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="it.gov.giua.database.dao.RicoveroDAO"%>
+<%@page import="it.gov.giua.model.Ricovero"%>    
+<%@page import="java.util.List"%>
+    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
@@ -33,6 +37,8 @@
      
 </head>
 <body >
+
+
 	<%@ include file = "header.jsp" %>
   	<style type="text/css">
   		#header2{
@@ -72,6 +78,28 @@
 		}
 	
   	</style>
+
+  	<div id="header2">
+  		<div style="padding-left: 250px;">
+  			<img src="images/imgReferti.jpg" style="height:150px;width: 150px;;">
+  			<h1 align="middle">	Referti e analisi mediche paziente</h1>
+  		</div>
+  	</div>	
+  		<div style="background-color: #DADADA ">
+  			
+  			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getCodice_ricovero();%></p>
+  			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getData_ora_dimissione();%></p>
+  			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getData_ora_ricovero();%></p>
+  			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getDiagnosi();%></p>
+  			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getID();%></p>
+  			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getTerapia();%></p>
+  			
+  			
+  			
+  			
+  			
+  			
+
   	
 
 <body>
@@ -103,7 +131,6 @@
   			<p>Prendere informazioni dal db</p><br>
   			<p>Prendere informazioni dal db</p><br>
   			<p>Prendere informazioni dal db</p><br>
-  		</div>
   	  		
 
   

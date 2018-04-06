@@ -11,8 +11,7 @@ import java.util.Date;
 
 import javax.xml.crypto.Data;
 
-
-
+import it.gov.giua.model.Prelievi;
 import it.gov.giua.model.Ricovero;
 
 public class RicoveroDAO extends BaseDAO {
@@ -22,9 +21,9 @@ public class RicoveroDAO extends BaseDAO {
 
 	}
 
-	 public List<Ricovero> getAllRicovero(String query) {
+	 public Ricovero getAllRicovero(String query) {
 		logger.info("Recupero tutti i ricoveri");
-		List<Ricovero> ricoveri = new ArrayList<Ricovero>();
+		Ricovero ricoveri = new Ricovero();
 
 		try {
 			ResultSet rs = getDbm().performQuery(query);
@@ -37,14 +36,17 @@ public class RicoveroDAO extends BaseDAO {
 				Date data_ora_dimissione = rs.getDate("data_ora_dimissione");
 				
 				
-
-				Ricovero current = new Ricovero(data_ora_ricovero,data_ora_dimissione,diagnosi,terapia,codice_ricovero);
-				current.setID(ID);
-				ricoveri.add(current);
+				ricoveri.setCodice_ricovero(codice_ricovero);
+				ricoveri.setData_ora_dimissione(data_ora_dimissione);
+				ricoveri.setData_ora_ricovero(data_ora_ricovero);
+				ricoveri.setDiagnosi(diagnosi);
+				ricoveri.setID(ID);
+				ricoveri.setTerapia(terapia);
+				
 			}
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
-			ricoveri = new ArrayList<Ricovero>();
+			
 		}
 
 		return ricoveri;
@@ -52,8 +54,13 @@ public class RicoveroDAO extends BaseDAO {
 	 
 		 
 
-	public List<Ricovero> getRicoverobyUtente(String codiceFiscale,int codice_ricovero) {
+	public Ricovero getRicoverobyUtente(String codiceFiscale,int codice_ricovero) {
 		return getAllRicovero("select * from ricoveri,utenti where utenti.ID_UTENTE = ricoveri.utenti_ID_UTENTE and utenti.CODICE_FISCALE ="+codiceFiscale+" and ricoveri.CODICE_RICOVERO="+codice_ricovero);
+	}
+	
+	
+	public Ricovero getRicoveroByCodicePrelieviandCodiceFiscale(String CodiceFiscale, String CodicePrelievo) {
+		return getAllRicovero("select * from utenti, ricoveri where utenti.ID_UTENTE = ricoveri.utenti_ID_UTENTE AND ricoveri.CODICE_RICOVERO = ' "+CodicePrelievo+"' AND utenti.CODICE_FISCALE = '"+CodiceFiscale+"';");
 	}
 	
 	//metodo per inserire un ricovero nel DB (nuovo)

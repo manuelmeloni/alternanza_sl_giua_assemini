@@ -11,6 +11,8 @@ import java.util.Calendar;
 
 import it.gov.giua.model.Prelievi;
 import it.gov.giua.model.Ricovero;
+import it.gov.giua.model.Utente;
+import it.gov.giua.model.DateOf;
 
 
 public class PrelieviDAO extends BaseDAO {
@@ -20,35 +22,37 @@ public class PrelieviDAO extends BaseDAO {
 
 	}
 
-	public List<Prelievi> getAllPrelievi(String query) {
+	public Prelievi getAllPrelievi(String query) {
 		logger.info("Recupero tutti i prelievi");
-		List<Prelievi> Prelievi = new ArrayList<Prelievi>();
+				Prelievi pre =new Prelievi();
+				try {
+					ResultSet rs = getDbm().performQuery(query);
+					while (rs.next()) {
+						int ID = rs.getInt("ID");
+					
+						Date data_ora_prelievo =rs.getDate("DATA_ORA_PRELIEVO");
+						Date data_ora_fine=rs.getDate("DATA_ORE_FINE"); 
+						String codice_visita=rs.getString("CODICE_VISITA") ;
+						String referto= rs.getString("referto");
+						
 
-		try {
-			ResultSet rs = getDbm().performQuery(query);
-			while (rs.next()) {
-				int id_prelievo = rs.getInt("id_prelievo");
-				Date data_ora_prelievo = rs.getDate("data_ora_prelievo");
-				Date data_ora_fine = rs.getDate("data_ora_fine");
-				String codice_visita = rs.getString("codice_visita");
-				String referto = rs.getString("referto");
-				int dipendenti_id_dipendente = rs.getInt("dipendenti_id_dipendente");
+						pre.setCodice_visita(codice_visita);
+						pre.setData_ora_fine(data_ora_fine);
+						pre.setData_ora_prelievo(data_ora_prelievo);
+						pre.setId_prelievo(ID);
+						pre.setReferto(referto);
+					}
+				} catch (SQLException e) {
+					logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
+					
+				}
 
-				Prelievi current = new Prelievi( id_prelievo,  data_ora_prelievo,  data_ora_fine ,  codice_visita, dipendenti_id_dipendente,referto);
-				current.setId_prelievo(id_prelievo);
-				Prelievi.add(current);
+				return pre;
 			}
-		} catch (SQLException e) {
-			logger.log(Level.SEVERE, "Errore nel recupero dei prelievi ->" + e.getMessage());
-			Prelievi = new ArrayList<Prelievi>();
-		}
-
-		return Prelievi;
-	}
 
 
-	public List<Prelievi> getPrelievoByCodicePrelievi() {
-		return getAllPrelievi("select * from utenti, prelievi where utenti.ID_UTENTE = prelievi.utenti_ID_UTENTE AND prelievi.CODICE_VISITA = 'SALMO';");
+	public Prelievi getPrelievoByCodicePrelieviandCodiceFiscale(String CodiceFiscale, String CodicePrelievo) {
+		return getAllPrelievi("select * from utenti, prelievi where utenti.ID_UTENTE = prelievi.utenti_ID_UTENTE AND prelievi.CODICE_VISITA = ' "+CodicePrelievo+"' AND utenti.CODICE_FISCALE = '"+CodiceFiscale+"';");
 	}
 	
 	public void setPrelievi(Prelievi p) throws SQLException {
