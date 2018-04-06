@@ -26,6 +26,7 @@
 			h3 { margin-top: 0px !important; font-weight: bold !important; color: #307FE0; }
 			h5 { margin: 0px !important; font-weight: bold !important; color: #307FE0; }
 			.imgFontAwesome { font-size: 140px; text-align: center; color: #307FE0; }
+			.caption h5, p { text-align: center; }
 		</style>
 	</head>
 	<body>
