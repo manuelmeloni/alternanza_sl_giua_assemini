@@ -13,7 +13,7 @@ public class Dipendente {
 	private String codice_fiscale;
 	private String email;
 	private Date data_assunzione;
-	private Date data_licenziamento;
+	//private Date data_licenziamento;
 	private int categoria; //0 per Amministratore, 1 Dipendente Medico, 2 Dipendente Altro
 	private String username;
 	private String password;
@@ -27,8 +27,8 @@ public class Dipendente {
 		codice_fiscale = "Sconosciuto";
 		email = "Sconosciuto";
 		this.data_assunzione = new Date();
-		this.data_licenziamento = new Date();
-		categoria = 000;
+		//this.data_licenziamento = new Date();
+		categoria = 0;
 		username = "Sconosciuto";
 		password = "Sconosciuto";			
 	}
@@ -40,13 +40,13 @@ public class Dipendente {
 		this.codice_fiscale = d.getCodiceFiscale();
 		this.email = d.getEmail();
 		this.data_assunzione = d.getDataAssunzione();
-		this.data_licenziamento = d.getDataLicenziamento();
+		/*this.data_licenziamento = d.getDataLicenziamento();*/
 		this.categoria = d.getCategoria();
 		this.username = d.getUsername();
 		this.password = d.getPassword();
 	}
-	public Dipendente(Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password) {
-		this.setIdDipendente();
+	public Dipendente(int id_dipendente, Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password) {
+		this.setIdDipendenteByValue(id_dipendente);
 		boolean state = false;
 		state = this.setDataNascita(data_nascita);
 		this.data_nascita = (state) ? this.data_nascita : new Date(LocalDate.now().getYear(), LocalDate.now().getMonthValue(), LocalDate.now().getDayOfMonth());
@@ -60,8 +60,8 @@ public class Dipendente {
 		this.email = (state) ? this.email : "Sconosciuto";
 		state = this.setDataAssunzione(data_assunzione);
 		this.data_assunzione = (state) ? this.data_assunzione : new Date(0, 0, 0);
-		state = this.setDataLicenziamento(data_licenziamento);
-		this.data_licenziamento = (state) ? this.data_licenziamento : new Date(0, 0, 0);
+		/*state = this.setDataLicenziamento(data_licenziamento);*/
+		/*this.data_licenziamento = (state) ? this.data_licenziamento : new Date(0, 0, 0);*/
 		state = this.setCategoria(categoria);
 		this.categoria = (state) ? this.categoria : 2;
 		state = this.setUsername(username);
@@ -73,6 +73,9 @@ public class Dipendente {
 	//Proprietà
 	private void setIdDipendente() {
 		this.id_dipendente = ++this.id;
+	}
+	private void setIdDipendenteByValue(int id_dipendente) {
+		this.id_dipendente = id_dipendente;
 	}
 	public int getIdDipendente() {
 		return this.id_dipendente;
@@ -168,7 +171,7 @@ public class Dipendente {
 		else
 			return false;
 	}
-	public Date getDataLicenziamento() {
+	/*public Date getDataLicenziamento() {
 		return data_licenziamento;
 	}
 	public String getDataLicenziamentoString() { //restituisce la data come oggetto String nel formato AAAA-MM-GG
@@ -181,7 +184,7 @@ public class Dipendente {
 		}
 		else
 			return false;
-	}
+	}*/
 	public int getCategoria() {
 		return categoria;
 	}
@@ -230,12 +233,12 @@ public class Dipendente {
 	
 	//toString
 	public String toString() { //ritorna un oggetto String contenente tuttii campi dell'istanza, separati dalla virgola (,)
-		return this.id_dipendente + "," + this.getDataNascitaString() + "," + this.nome + "," + this.cognome + "," + this.codice_fiscale + "," + this.email + "," + this.getDataAssunzioneString() + "," + this.getDataLicenziamentoString() + "," + this.categoria + "," + this.username + "," + this.password;
+		return this.id_dipendente + "," + this.getDataNascitaString() + "," + this.nome + "," + this.cognome + "," + this.codice_fiscale + "," + this.email + "," + this.getDataAssunzioneString() + "," /*+ this.getDataLicenziamentoString() + ","*/ + this.categoria + "," + this.username + "," + this.password;
 	}
 	
 	//equals
 	public boolean equals(Dipendente d) {
-		if(this.data_nascita.equals(d.getDataNascita()) && this.nome.equals(d.getNome()) && this.cognome.equals(d.getCognome()) && this.codice_fiscale.equals(d.getCodiceFiscale()) && this.data_assunzione.equals(d.getDataAssunzione()) && this.data_licenziamento.equals(d.getDataLicenziamento()) && this.categoria == d.getCategoria() && this.username.contentEquals(d.getUsername()) && this.password.contentEquals(d.getPassword()))
+		if(this.data_nascita.equals(d.getDataNascita()) && this.nome.equals(d.getNome()) && this.cognome.equals(d.getCognome()) && this.codice_fiscale.equals(d.getCodiceFiscale()) && this.data_assunzione.equals(d.getDataAssunzione()) /*&& this.data_licenziamento.equals(d.getDataLicenziamento())*/ && this.categoria == d.getCategoria() && this.username.contentEquals(d.getUsername()) && this.password.contentEquals(d.getPassword()))
 			return true;
 		return false;
 	}

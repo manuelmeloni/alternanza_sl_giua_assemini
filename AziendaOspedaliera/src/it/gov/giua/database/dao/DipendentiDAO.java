@@ -38,7 +38,7 @@ public class DipendentiDAO extends BaseDAO {
 				String username= rs.getString("username");
 				String password= rs.getString("password");
 
-				Dipendente current = new Dipendente(data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password);
+				Dipendente current = new Dipendente(id_dipendente, data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password);
 				
 				dip.add(current);
 			}
@@ -52,12 +52,32 @@ public class DipendentiDAO extends BaseDAO {
 	}
 	
 	
-	/*public Dipendente getDipendente(String username, String password) {
-		return (Dipendente) getAllDipendenti("Select * FROM Dipendenti WHERE password="+password+" AND username="+username);
-		
+	public Dipendente getDipendente(String username) {
+		Dipendente d = null;
+		try {
+			ResultSet rs = getDbm().performQuery("SELECT * FROM Dipendenti WHERE username = '" + username + "' LIMIT 1");
+			rs.next();
+			int id_dipendente = rs.getInt("ID_DIPENDENTE");
+			Date data_nascita=	rs.getDate("DATA_NASCITA");
+			String nome = rs.getString("NOME");
+			String cognome = rs.getString("COGNOME");
+			String codice_fiscale= rs.getString("CODICE_FISCALE");
+			String mail= rs.getString("MAIL");
+			Date data_assunzione=	rs.getDate("DATA_ASSUNZIONE");			
+			Date data_licenziamento = rs.getDate("DATA_LICENZIAMENTO");
+			int categoria= rs.getInt("CATEGORIA");
+			String user= rs.getString("USERNAME");
+			String password= rs.getString("PASSWORD");
+			d = new Dipendente(id_dipendente, data_nascita, nome, cognome, codice_fiscale, mail, data_assunzione, data_licenziamento, categoria, user, password);
+			return d;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
-	public Dipendente deleteDipendente(String username, String password) {
+	/*public Dipendente deleteDipendente(String username, String password) {
 		return (Dipendente) getAllDipendenti("DELETE FROM Dipendenti WHERE password="+password+" username="+username);
 		
 	}*/

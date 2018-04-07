@@ -30,6 +30,13 @@
 	</head>
 	<body>
 		<%@ include file = "header.jsp" %>
+		<%@ page import = "it.gov.giua.database.dao.DipendentiDAO" %>
+		<%@ page import = "it.gov.giua.model.Dipendente" %>
+		<% 
+		DipendentiDAO dDAO = new DipendentiDAO();
+		String username = (String) session.getAttribute("username");
+		Dipendente d = new Dipendente(dDAO.getDipendente(username));
+		%>
 		<!-- Pagina della gestione del Medico -->
 		<main>
 			<div class="row" id="subNav">
@@ -43,17 +50,16 @@
 				<div class="jumbotron" id="modificaProfilo">
 					<form action="EditMedicServlet" method="post">
 					  <a name="prof"><h2>Gestione Profilo</h2></a>
-					  <p>Nome: <strong>Nome Medico</strong><em>(Non modificabile)</em></p>
-					  <p>Cognome: <strong>Cognome Medico</strong><em>(Non modificabile)</em></p>
-					  <p>Nascita: <strong>Data Nascita Medico</strong><em>(Non modificabile)</em></p>
-					  <p>Codice Fiscale: <strong>Codice Fiscale Medico</strong><em>(Non modificabile)</em></p>
-					  <p>Assunzione: <strong>Data Assunzione Medico</strong><em>(Non modificabile)</em></p>
-					  <p>Licenziamento: <strong>Data Licenziamento Medico</strong><em>(Non modificabile)</em></p>
-					  <p>Categoria: <strong>1 (Medico)</strong><em>(Non modificabile)</em></p>
-					  <p>Username: <strong>Username Medico</strong> <input type="text" class="textField" name="username"/></p>
-					  <p>E-mail: <strong>E-mail Medico</strong> <input type="text" class="textField" name="email"/></p>
+					  <p>Nome: <strong><% d.getNome(); %></strong><em>(Non modificabile)</em></p>
+					  <p>Cognome: <strong><% System.out.println(d.getCognome()); %></strong><em>(Non modificabile)</em></p>
+					  <p>Nascita: <strong><% System.out.println(d.getDataNascita()); %></strong><em>(Non modificabile)</em></p>
+					  <p>Codice Fiscale: <strong><% System.out.println(d.getCodiceFiscale()); %></strong><em>(Non modificabile)</em></p>
+					  <p>Assunzione: <strong><% System.out.println(d.getDataAssunzione()); %></strong><em>(Non modificabile)</em></p>
+					  <p>Licenziamento: <strong>Attualmente Lavorando</strong><em>(Non modificabile)</em></p>
+					  <p>Categoria: <strong><% System.out.println(d.getCategoria()); %></strong><em>(Non modificabile)</em></p>
+					  <p>Username: <strong><% System.out.println(d.getUsername()); %></strong> <input type="text" class="textField" name="username"/></p>
+					  <p>E-mail: <strong><% System.out.println(d.getEmail()); %></strong> <input type="text" class="textField" name="email"/></p>
 					  <p>Vecchia Password: <input type="password" class="textField" name="oldPass"/> Nuova Password:  <input type="password" class="textField" name="newPass"/></p>
-					  <!-- Necessario DipendentiDAO -->
 					  <p><a class="btn btn-primary btn-lg" href="" role="submit">Salva le Modifiche</a></p>
 					</form>
 				</div>
