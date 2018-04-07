@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+
 import it.gov.giua.database.dao.LoginDAO;
 import it.gov.giua.model.Login;
+
 
 @WebServlet("/AdminEmployeeServlet")
 public class AdminEmployeeServlet extends HttpServlet {
@@ -36,7 +39,12 @@ public class AdminEmployeeServlet extends HttpServlet {
 	        	Login login= new Login();
 	        	login.setCategoria(sessionRole);
 	        	login.setUsername(sessionUsername);
-	        }else 
+	        }
+	        else if(sessionRole == 1) {
+	        	RequestDispatcher rd = request.getRequestDispatcher("EditMedico.jsp");
+	        	rd.forward(request, response);
+	        }
+	        else 
 	        	out.println("Benvenuto Dottor "+sessionUsername);
 	}
 
