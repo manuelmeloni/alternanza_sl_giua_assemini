@@ -47,7 +47,7 @@
       <div class="caption">
         <h3>Ritiro referti medici e cartella clinica</h3>
         <p>...</p>
-        <p><a href="" class="btn btn-primary" role="button">Button</a></p>
+        <p><a href="#myModal" class="btn btn-primary" role="button" data-toggle="modal" data-target="#myModal">Button</a></p>
       </div>
     </div>
   </div>
@@ -65,3 +65,31 @@
  </div> 
 
 
+    <div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+  <form action="ControllerPrelievi" method="post">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Accedi all'area privata</h4>
+        </div>
+        <div class="modal-body">
+        
+        
+          <div class="form-group">
+        <label for="username">Codice Fiscale</label>
+        <input class="form-control" placeholder="Inserisci il Codice Fiscale" type="text" name="CodiceFiscale">
+        </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+      <input class="form-control" id="password" placeholder="Inserisci il codiceVisita" name="CodiceVisita">
+      </div>
+        </div>
+        <div class="modal-footer">
+          <a href="#" data-dismiss="modal" class="btn">Chiudi</a>
+          <input type="submit" value="Login" class="btn"/>
+        </div>
+      </div>
+      </form>
+    </div>
+</div>
