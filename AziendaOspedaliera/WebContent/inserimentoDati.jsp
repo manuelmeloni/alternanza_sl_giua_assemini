@@ -11,12 +11,7 @@
 
 <div>
 
-<% 
-	UtenteDAO UD= new UtenteDAO(); 
-	ControllerUtente CU=new ControllerUtente();
-	%>
-
-<form action="ControllerUtente" method="POST">
+<form action="ControllerUtente" method="post">
 
 Codice Fiscale: <input type="text" maxlength="16" name="codiceFiscale">
 <input type="submit">
@@ -26,17 +21,7 @@ Codice Fiscale: <input type="text" maxlength="16" name="codiceFiscale">
 
 
 
-<form action="ControllerRicovero" method="POST">
 
-	Diagnosi:<textarea name="Diagnosi"> </textarea>
-	<br>
-	Terapia: <textarea name="Terapia"></textarea>
-	<br>
-	Codice Ricovero: <input type="text" name="Codice_Ricovero"> </input>
-	
-	<input type="submit">
-	
-</form>
 
 
 </div>

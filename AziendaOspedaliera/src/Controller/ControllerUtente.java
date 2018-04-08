@@ -1,6 +1,8 @@
 package Controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,34 +32,26 @@ public class ControllerUtente extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		UtenteDAO u =new UtenteDAO();
-		if(u.getUtentebyCodFiscale(req.getParameter("codiceFiscale"))==null){
-			InserisciUtente(req,resp);		//deve restituire la pagina per inserire i dati dell'utente (mancante)
-			
-		}
+		UtenteDAO dao=new UtenteDAO();
 		
-		else {
+		try {
+			if(dao.controlloCF(req.getParameter("codiceFiscale"))==false){
+				resp.sendRedirect("InserisciUtente.jsp");		
+				
+			}
 			
-			resp.getWriter().write("Home.jsp");			//dovrebbe mostrare i dati dell'utente cercato (mancante)	
-			
+			else {
+				
+				resp.sendRedirect("InserisciRicovero.jsp");			
+				
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 	
-	protected void InserisciUtente(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-       
-		
-		// response.getWriter().write("utente.jsp");		//pagina per inserire i dati (mancante)
-		Utente u=new Utente();
-		u.setCodiceFiscale(request.getParameter("codiceFiscale"));
-		u.setCognome(request.getParameter("Cognome"));    
-		u.setNome(request.getParameter("Nome"));
-		
-		
-		response.getWriter().write("Ricovero.jsp");
-		
-
-}
+	
 	
 	
        
