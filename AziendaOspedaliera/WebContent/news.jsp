@@ -24,7 +24,6 @@
 </section>
 
 
-<div class="album py-5 bg-light">
 	<div class="container">
 	<% 
 	
@@ -33,24 +32,16 @@
 	
 	
 	%>
-		<div class="row">
-			<div class="col-md-4">
-				<div class="card mb-4 box-shadow">
-					<div class="card-body">
-						<p class="card-text"><%= current.getSottotitolo() %></p>
-						<div class="d-flex justify-content-between align-items-center">
-							<div class="btn-group">
-								<button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+
+	        <div class="col-md-4">
+	          <h2><%=current.getTitolo() %></h2>
+	          <p><%=current.getSottotitolo() %></p>
+	          <p><a class="btn btn-default" href="SingleView.jsp?id=<%=current.getId() %>" role="button">View details »</a></p>
+	        </div>
+
 	<%
 	
 	}
 	%>
 	</div>
-</div>
 </main>

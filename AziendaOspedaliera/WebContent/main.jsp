@@ -22,18 +22,19 @@
 			h3 { margin-top: 0px !important; font-weight: bold !important; color: #307FE0; }
 			h5 { margin: 0px !important; font-weight: bold !important; color: #307FE0; }
 			.imgFontAwesome { font-size: 140px; text-align: center; color: #307FE0; }	
+			#containerA{height:2000px;}
 		</style>
   	<!--  FINE CSS -->
   	
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    
     <script src="js/bootstrap.min.js"></script> 
      
   </head>
   <body >
 	<%@ include file = "header.jsp" %>
-	   <%@ include file = "news.jsp" %>
+	   <%@ include file = "news.jsp" %>	   
 	<%@ include file = "footer.jsp" %>
   </body>
   </html>

@@ -50,15 +50,15 @@
 				<div class="jumbotron" id="modificaProfilo">
 					<form action="EditMedicServlet" method="post">
 					  <a name="prof"><h2>Gestione Profilo</h2></a>
-					  <p>Nome: <strong><% d.getNome(); %></strong><em>(Non modificabile)</em></p>
-					  <p>Cognome: <strong><% System.out.println(d.getCognome()); %></strong><em>(Non modificabile)</em></p>
-					  <p>Nascita: <strong><% System.out.println(d.getDataNascita()); %></strong><em>(Non modificabile)</em></p>
-					  <p>Codice Fiscale: <strong><% System.out.println(d.getCodiceFiscale()); %></strong><em>(Non modificabile)</em></p>
-					  <p>Assunzione: <strong><% System.out.println(d.getDataAssunzione()); %></strong><em>(Non modificabile)</em></p>
+					  <p>Nome: <strong><%= d.getNome() %></strong><em>(Non modificabile)</em></p>
+					  <p>Cognome: <strong><%= d.getCognome() %></strong><em>(Non modificabile)</em></p>
+					  <p>Nascita: <strong><%= d.getDataNascita() %></strong><em>(Non modificabile)</em></p>
+					  <p>Codice Fiscale: <strong><%= d.getCodiceFiscale() %></strong><em>(Non modificabile)</em></p>
+					  <p>Assunzione: <strong><%= d.getDataAssunzione() %></strong><em>(Non modificabile)</em></p>
 					  <p>Licenziamento: <strong>Attualmente Lavorando</strong><em>(Non modificabile)</em></p>
-					  <p>Categoria: <strong><% System.out.println(d.getCategoria()); %></strong><em>(Non modificabile)</em></p>
-					  <p>Username: <strong><% System.out.println(d.getUsername()); %></strong> <input type="text" class="textField" name="username"/></p>
-					  <p>E-mail: <strong><% System.out.println(d.getEmail()); %></strong> <input type="text" class="textField" name="email"/></p>
+					  <p>Categoria: <strong><%=d.getCategoria() %></strong><em>(Non modificabile)</em></p>
+					  <p>Username: <strong><%=d.getUsername() %></strong> <input type="text" class="textField" name="username"/></p>
+					  <p>E-mail: <strong><%= d.getEmail() %></strong> <input type="text" class="textField" name="email"/></p>
 					  <p>Vecchia Password: <input type="password" class="textField" name="oldPass"/> Nuova Password:  <input type="password" class="textField" name="newPass"/></p>
 					  <p><a class="btn btn-primary btn-lg" href="" role="submit">Salva le Modifiche</a></p>
 					</form>

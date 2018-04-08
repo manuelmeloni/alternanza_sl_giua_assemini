@@ -42,7 +42,7 @@ public class NewsDAO extends BaseDAO {
 	}
 
 	public List<News> getAllEnableNews() {
-		return getAllNews("select * from news where abilitato = 1 and tipo != 'p' ");
+		return getAllNews("select * from news where abilitato = 1 and tipo = 's' ");
 	}
 	
 	public News getPrincipalNews() {
