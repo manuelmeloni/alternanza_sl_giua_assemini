@@ -1,6 +1,7 @@
 package Controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -32,10 +33,11 @@ public class ControllerUtente extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		UtenteDAO dao=new UtenteDAO();
 		
 		try {
-			if(dao.controlloCF(req.getParameter("codiceFiscale"))==false){
+			if(dao.controlloCF(req.getParameter("CodiceFiscale"))==false){
 				resp.sendRedirect("InserisciUtente.jsp");		
 				
 			}

@@ -1,27 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="java.util.List"%>
-<%@page import="it.gov.giua.database.dao.UtenteDAO"%>
-<%@page import="it.gov.giua.model.Utente"%>
-<%@page import="it.gov.giua.database.dao.RicoveroDAO"%>
-<%@page import="it.gov.giua.model.Ricovero"%>
-<%@page import="Controller.ControllerUtente"%>
 
 
 
-<div>
+
 
 <form action="ControllerUtente" method="post">
-
-Codice Fiscale: <input type="text" maxlength="16" name="codiceFiscale">
-<input type="submit">
-
-
+<div style="padding:20%" height:80%>
+  <div class="input-group">
+  
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input id="email" type="text" class="form-control" name="CodiceFiscale" placeholder="CodiceFiscale" maxlength="16" >
+   
+    
+ 	 
+</div>
+ <br>
+    <center> <button type="submit" class="btn" >Invia</button> </center>
+</div>
 </form>
 
 
 
 
-
-
-</div>
