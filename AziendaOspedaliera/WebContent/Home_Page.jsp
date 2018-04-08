@@ -24,9 +24,7 @@
   </head>
   <body >
 		<%@ include file = "header.jsp" %>
-		<center>
-		<%@ include file = "Home_Page.html" %>
-		</center>
+		<%@ include file = "home.jsp" %>
 		<%@ include file = "footer.jsp" %>
 	
 	<!--script per l'apertura della lista d attesa-->

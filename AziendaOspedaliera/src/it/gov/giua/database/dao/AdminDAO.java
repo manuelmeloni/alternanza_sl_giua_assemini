@@ -34,7 +34,7 @@ public class AdminDAO extends BaseDAO {
 				 String codice_fiscale=rs.getString("CODICE_FISCALE");
 				 
 				 //Creare un nuovo oggetto di tipo Utente
-				 Utente utente= new Utente(id_utente,id_reparto,data_nascita,nome,cognome,codice_fiscale);
+				 Utente utente= new Utente(codice_fiscale,id_utente,id_reparto,data_nascita,nome,cognome);
 				 listaUtenti.add(utente);
 				//inserirlo nella lista da restituire in uscita
 				

@@ -3,10 +3,8 @@
 <%@page import="it.gov.giua.database.dao.RicoveroDAO"%>
 <%@page import="it.gov.giua.model.Ricovero"%>    
 <%@page import="java.util.List"%>
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-
-
+ <html>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -34,13 +32,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script> 
-     
-</head>
-<body >
-
-
-	<%@ include file = "header.jsp" %>
-  	<style type="text/css">
+     	<style type="text/css">
   		#header2{
   			width: 100%;
   			height: 150px;
@@ -78,11 +70,18 @@
 		}
 	
   	</style>
+</head>
+
+<body>
+
+
+	<%@ include file = "header.jsp" %>
+  
 
   	<div id="header2">
   		<div style="padding-left: 250px;">
   			<img src="images/imgReferti.jpg" style="height:150px;width: 150px;;">
-  			<h1 align="middle">	Referti e analisi mediche paziente</h1>
+  			<h1 align="center">	Referti e analisi mediche paziente</h1>
   		</div>
   	</div>	
   		<div style="background-color: #DADADA ">
@@ -94,27 +93,17 @@
   			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getID();%></p>
   			<p>REFERTO DEL PAZIENTE: <%  ((Ricovero)session.getAttribute("visita")).getTerapia();%></p>
   			
+  		</div>	
   			
-  			
-  			
-  			
-  			
-
-  	
-
-<body>
 
 <div class="container-fluid">
   <div class="row" style=" background-color:#CACACA ;  width: 100%; height: 170px;">
   <div class="col-xs-12 col-sm-6 col-md-8 col-sm-4">
  
- 	 <h1 align="middle">	 <img src="images/imgReferti.jpg" style="height:150px;width: 190px; padding-bottom:20px; padding-right:30px">Referti e analisi mediche paziente</h1>
+ 	 <h1 align="center">	 <img src="images/imgReferti.jpg" style="height:150px;width: 190px; padding-bottom:20px; padding-right:30px">Referti e analisi mediche paziente</h1>
   
-  </div>
-  
-    
-    </div>
-  
+  </div> 
+    </div>  
   </div>
 
   		
@@ -132,7 +121,8 @@
   			<p>Prendere informazioni dal db</p><br>
   			<p>Prendere informazioni dal db</p><br>
   	  		
-
+		</div>
   
   	<%@ include file = "footer.jsp" %>
   </body>
+</html>

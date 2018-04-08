@@ -34,18 +34,20 @@ public class AdminEmployeeServlet extends HttpServlet {
 	        out.println("contenuto di sessionUsername: ( "+sessionUsername+" )");
 	        sessionRole=(int)session.getAttribute("role");
 	        out.println("contenuto di sessionRole: ( "+sessionRole+" )");
-	        if(sessionRole==0) {
+	        switch(sessionRole) {
+	        case 0:
 	        	out.println("Benvenuto Admin "+sessionUsername);
 	        	Login login= new Login();
 	        	login.setCategoria(sessionRole);
 	        	login.setUsername(sessionUsername);
-	        }
-	        else if(sessionRole == 1) {
+	        break;
+	        case 1:
 	        	RequestDispatcher rd = request.getRequestDispatcher("EditMedico.jsp");
 	        	rd.forward(request, response);
-	        }
-	        else 
+	        break;
+	        case 2:
 	        	out.println("Benvenuto Dottor "+sessionUsername);
+	        break;	
+	        }
 	}
-
 }
