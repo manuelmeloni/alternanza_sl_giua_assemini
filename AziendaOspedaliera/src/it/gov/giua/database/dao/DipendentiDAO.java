@@ -56,7 +56,7 @@ public class DipendentiDAO extends BaseDAO {
 		Dipendente d = null;
 		try {
 			
-			ResultSet rs = getDbm().performQuery("SELECT * FROM Dipendenti WHERE username = '" + username + "' LIMIT 1");
+			ResultSet rs = getDbm().performQuery("SELECT * FROM dipendenti WHERE username = '" + username + "' LIMIT 1");
 			while (rs.next()) {{
 				
 			}
@@ -72,7 +72,6 @@ public class DipendentiDAO extends BaseDAO {
 			String user= rs.getString("USERNAME");
 			String password= rs.getString("PASSWORD");
 			d = new Dipendente(id_dipendente, data_nascita, nome, cognome, codice_fiscale, mail, data_assunzione, data_licenziamento, categoria, user, password);
-			
 			}
 			return d;
 		}

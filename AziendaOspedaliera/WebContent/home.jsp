@@ -28,7 +28,7 @@
             			</li>
             
             <!--servizi vari home page-->
-            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/file.svg" alt="Ritira documenti"><br><br><strong>Ritiro referti medici e cartella clinica </strong><br></a></li>
+            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#prelievi"><img src="images/file.svg" alt="Ritira documenti"><br><br><strong>Ritiro referti medici e cartella clinica </strong><br></a></li>
             <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/clock.svg"><br><br><strong>Orari</strong><br>Apertura e chiusura dell'Ospedale</a></li>
             <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/news.svg" alt="Leggi consigli dal reparto"><br><br><strong>News</strong><br>News dall' Ospedale</a></li>
            </ul>
@@ -39,7 +39,7 @@
 
 
 <!--finestre collegamento alle news-->
-    
+<a name="prelievi">    
  <div class="col-sm-12 col-md-12" style="height:100%; padding-right: 4%; padding-left: 4%;padding-top: 2%; background-color:#F0F0FF;float:all;">
   <div class="col-sm-10 col-md-12">
     <div class="thumbnail">
@@ -52,6 +52,7 @@
     </div>
   </div>
   
+</a>  
   <div class="col-sm-10 col-md-12">
     <div class="thumbnail">
       <img src="images/prelievo.jpg" alt="" class="css">
@@ -81,8 +82,8 @@
         <input class="form-control" placeholder="Inserisci il Codice Fiscale" type="text" name="CodiceFiscale">
         </div>
       <div class="form-group">
-        <label for="password">Password</label>
-      <input class="form-control" id="password" placeholder="Inserisci il codiceVisita" name="CodiceVisita">
+        <label for="password">Codice Visita</label>
+      <input class="form-control" id="password" placeholder="Inserisci il Codice Visita" name="CodiceVisita">
       </div>
         </div>
         <div class="modal-footer">
