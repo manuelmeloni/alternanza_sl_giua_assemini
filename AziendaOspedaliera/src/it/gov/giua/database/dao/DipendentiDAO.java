@@ -9,6 +9,7 @@ import java.util.logging.Level;
 import java.util.Date;
 import it.gov.giua.model.Dipendente;
 import it.gov.giua.model.News;
+import it.gov.giua.model.Utente;
 
 public class DipendentiDAO extends BaseDAO {
 
@@ -37,8 +38,9 @@ public class DipendentiDAO extends BaseDAO {
 				int categoria= rs.getInt("categoria");
 				String username= rs.getString("username");
 				String password= rs.getString("password");
+				int id_reparto = rs.getInt("reparti_ID_REPARTO");
 
-				Dipendente current = new Dipendente(id_dipendente, data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password);
+				Dipendente current = new Dipendente(id_dipendente, data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
 				
 				dip.add(current);
 			}
@@ -51,15 +53,44 @@ public class DipendentiDAO extends BaseDAO {
 		
 	}
 	
+	public List<Utente> getAllUtentiWithRepartoId(int id_reparto) {
+		List<Utente> uList = new ArrayList<Utente>();
+		String query = "SELECT * FROM utenti WHERE reparti_ID_REPARTO = '" + id_reparto + "'";
+		try {
+			ResultSet rs = getDbm().performQuery(query);
+			while(rs.next()) {
+				int id_utente = rs.getInt("ID-UTENTE");
+				Date data_nascita=	rs.getDate("DATA_NASCITA");
+				String nome = rs.getString("NOME");
+				String cognome = rs.getString("COGNOME");
+				String codice_fiscale = rs.getString("CODICE_FISCALE");
+				int id_rep = rs.getInt("reparti_ID_REPARTO");
+				Utente current = new Utente(data_nascita, nome, cognome, codice_fiscale, id_utente, id_rep);
+				uList.add(current);
+			}
+			return uList;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
+	public void addUtentInList(Utente u) {
+		try {
+			String query = "INSERT INTO `utenti` (`ID-UTENTE`, `DATA_NASCITA`, `NOME`, `COGNOME`, `CODICE_FISCALE`, `reparti_ID_REPARTO`) VALUES (NULL, '" + u.getNascita() + "', '" + u.getNome() + "', '" + u.getCognome() + "', '" + u.getCodiceFiscale() + "', '" + u.getIdReparto() + "');";
+			getDbm().performQuery(query);
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public Dipendente getDipendente(String username) {
 		Dipendente d = null;
 		try {
-			
 			ResultSet rs = getDbm().performQuery("SELECT * FROM dipendenti WHERE username = '" + username + "' LIMIT 1");
-			while (rs.next()) {{
-				
-			}
+			rs.next();
 			int id_dipendente = rs.getInt("ID_DIPENDENTE");
 			Date data_nascita=	rs.getDate("DATA_NASCITA");
 			String nome = rs.getString("NOME");
@@ -71,8 +102,8 @@ public class DipendentiDAO extends BaseDAO {
 			int categoria= rs.getInt("CATEGORIA");
 			String user= rs.getString("USERNAME");
 			String password= rs.getString("PASSWORD");
-			d = new Dipendente(id_dipendente, data_nascita, nome, cognome, codice_fiscale, mail, data_assunzione, data_licenziamento, categoria, user, password);
-			}
+			int id_reparto = rs.getInt("reparti_ID_REPARTO");
+			d = new Dipendente(id_dipendente, data_nascita, nome, cognome, codice_fiscale, mail, data_assunzione, data_licenziamento, categoria, user, password, id_reparto);
 			return d;
 		}
 		catch(Exception e) {
@@ -117,9 +148,9 @@ public class DipendentiDAO extends BaseDAO {
 	      }
 	}
 	
-	public Dipendente setDipendente(Date data_nascita,String nome, String cognome, String codice_fiscale, String email, Date data_assunzione,Date data_licenziamento,int categoria, String username, String password) {
-		return (Dipendente) getAllDipendenti("Insert into (DATA_NASCITA,NOME,COGNOME,CODICE_FISCALE,MAIL,DATA_ASSUNZIONE,DATA_LICENZIAMENTO,CATEGORIA,USERNAME,PASSWORD) "
-				+ "values('"+data_nascita+"','"+nome+"','"+cognome+"')");
+	public Dipendente setDipendente(Date data_nascita,String nome, String cognome, String codice_fiscale, String email, Date data_assunzione,Date data_licenziamento,int categoria, String username, String password, int id_reparto) {
+		return (Dipendente) getAllDipendenti("Insert into (DATA_NASCITA,NOME,COGNOME,CODICE_FISCALE,MAIL,DATA_ASSUNZIONE,DATA_LICENZIAMENTO,CATEGORIA,USERNAME,PASSWORD,reparti_ID_REPARTO) "
+				+ "values('"+data_nascita+"','"+nome+"','"+cognome+"'"+"'"+id_reparto+"')");
 	}
 	
 	public boolean setUsername(String username, int id) {

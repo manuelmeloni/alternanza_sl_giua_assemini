@@ -9,7 +9,8 @@ public class Utente {
 	
 	private Date nascita;
 	private String nome,cognome,codiceFiscale;
-	private int ID; 
+	private int ID;
+	private int id_reparto;
 	
 	public Utente() {
 		super();
@@ -23,13 +24,14 @@ public class Utente {
 	 * @param codiceFiscale Codice Fiscale dell'utente da creare  
 	 * @param ID ID della persona della persona da creare 
 	 */
-	public Utente(Date nascita,String nome,String cognome,String codiceFiscale,int ID) {
+	public Utente(Date nascita,String nome,String cognome,String codiceFiscale,int ID,int id_reparto) {
 		super();
 		setNascita(nascita);
 		setNome(nome);
 		setCognome(cognome);
 		setCodiceFiscale(codiceFiscale);
 		setID(ID);
+		setIdReparto(id_reparto);
 	}
 
 	
@@ -39,6 +41,7 @@ public class Utente {
 	public void setCognome(String cognome) {this.cognome=cognome;}
 	public void setCodiceFiscale(String codiceFiscale) {this.codiceFiscale=codiceFiscale;}
 	public void setNascita(Date nascita) {this.nascita=nascita;}
+	public void setIdReparto(int id_reparto) { this.id_reparto=id_reparto; }
 	
 	//getters
 	public int getID() {return ID;}
@@ -46,13 +49,14 @@ public class Utente {
 	public String getCognome() {return cognome;}
 	public Date getNascita() {return nascita;}
 	public String getCodiceFiscale() {return codiceFiscale;}
+	public int getIdReparto() { return this.id_reparto; }
 	
 	
 	/* 
 	@Override
 	public String toString() {
 		return "News [id=" + id + ", titolo=" + titolo + ", sottotitolo=" + sottotitolo + ", testo=" + testo
-				+ ", abilitato=" + abilitato + ", tipo=" + tipo + "]";
+				+ ", abilitato=" + abilitato + ", tipo=" + tipo + ", ID reparto=" + id_reparto + "]";
 	}
 	
 	*/

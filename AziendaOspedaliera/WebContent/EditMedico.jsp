@@ -26,16 +26,27 @@
 			.jumbotron h2, p { padding-left: 35px !important; }
 			#imageAccount p { fon-size: 200px; text-align: center !important; }
 			#subNav { padding-top: 30px;  padding-bottom: 30px; }
+			th, td { text-align: center; }
+			td { width: 25% !important; }
+			tr { height: 30px !important; }
+			#tabellaUtente, #tabellaListaUtenti { border-style: solid !important; width: 90% !important; margin: 10px 5% 10px 5% !important; }
+			#tabellaUtente .textField { width: 200px; height: 30px; }
+			#tabellaUtente p { font-size: 14px !important; }
 		</style>
 	</head>
 	<body>
 		<%@ include file = "header.jsp" %>
 		<%@ page import = "it.gov.giua.database.dao.DipendentiDAO" %>
 		<%@ page import = "it.gov.giua.model.Dipendente" %>
+		<%@ page import = "it.gov.giua.model.Utente" %>
+		<%@ page import = "java.util.ArrayList" %>
+		<%@ page import = "java.util.List" %>
 		<% 
 		DipendentiDAO dDAO = new DipendentiDAO();
 		String username = (String) session.getAttribute("username");
 		Dipendente d = new Dipendente(dDAO.getDipendente(username));
+		List<Utente> uRepartoList = dDAO.getAllUtentiWithRepartoId(d.getIdReparto());
+		int uRepartoListLength = uRepartoList.size();
 		%>
 		<!-- Pagina della gestione del Medico -->
 		<main>
@@ -60,6 +71,7 @@
 					  <p>Username: <strong><%=d.getUsername() %></strong> <input type="text" class="textField" name="username"/></p>
 					  <p>E-mail: <strong><%= d.getEmail() %></strong> <input type="text" class="textField" name="email"/></p>
 					  <p>Vecchia Password: <input type="password" class="textField" name="oldPass"/> Nuova Password:  <input type="password" class="textField" name="newPass"/></p>
+					  <p>ID reparto di lavoro: <strong><%= d.getIdReparto() %></strong> <em>(Non modificabile)</em></p>
 					  <p><a class="btn btn-primary btn-lg" href="" role="submit">Salva le Modifiche</a></p>
 					</form>
 				</div>
@@ -67,8 +79,40 @@
 			<div class="row">
 				<div class="jumbotron" id="listaPazientiGenerale" name="lisPazGen">
 				   <a name="lisPaz"><h2>Lista Pazienti</h2></a>
-				    <!-- Necessario DipendentiDAO -->
-				     <p><a class="btn btn-primary btn-lg" href="#" role="button">Aggiungi Paziente</a></p>
+				   <table id="tabellaListaUtenti">
+					   <tr>
+					   		<th><strong>Nome Paziente</strong></th>
+					   		<th><strong>Cognome Paziente</strong></th>
+					   		<th><strong>Codice Fiscale</strong></th>
+					   		<th><strong>Data Nascita</strong></th>
+					   </tr>
+					   <%
+					   for(int i = 0; i<uRepartoListLength; i++) {
+					   %>
+					   <tr>
+					   		<td><%= uRepartoList.get(i).getNome() %></td>
+					   		<td><%= uRepartoList.get(i).getCognome() %></td>
+					   		<td><%= uRepartoList.get(i).getCodiceFiscale() %></td>
+					   		<td><%= uRepartoList.get(i).getNascita() %></td>
+					   </tr>
+					   <%
+					   }
+					   %>
+				   </table>
+				   <table id="tabellaUtente">
+				   		<tr>
+				   			<th colspan="4">AGGIUNGI UN UTENTE</th>
+				   		</tr>
+				 		<tr>
+				 			<td><p>Nome: <input type="text" class="textField" name="nomeUtente"/></p></td>
+				 			<td><p>Cognome: <input type="text" class="textField" name="cognomeUtente"/></p></td>
+				 			<td><p>Nascita (AAAA-MM-GG): <input type="text" class="textField" name="dataNscitaUtente"/></p></td>
+				 			<td><p>Codice Fiscale: <input type="text" class="textField" name="codiceFiscaleUtente"/></p></td>
+				 		</tr>
+				 		<tr>
+				 			<td colspan="4"><p><p style="text-align: center !important"><a class="btn btn-primary btn-lg" href="" role="button">Aggiungi Paziente</a></p></p></td>
+				 		</tr>
+				   </table>
 				</div>
 			</div>
 			<div class="row">

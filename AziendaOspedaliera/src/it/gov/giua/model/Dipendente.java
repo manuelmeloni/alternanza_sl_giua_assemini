@@ -13,10 +13,11 @@ public class Dipendente {
 	private String codice_fiscale;
 	private String email;
 	private Date data_assunzione;
-	//private Date data_licenziamento;
+	private Date data_licenziamento;
 	private int categoria; //0 per Amministratore, 1 Dipendente Medico, 2 Dipendente Altro
 	private String username;
 	private String password;
+	private int id_reparto;
 	
 	//Costruttori
 	public Dipendente() {
@@ -27,10 +28,12 @@ public class Dipendente {
 		codice_fiscale = "Sconosciuto";
 		email = "Sconosciuto";
 		this.data_assunzione = new Date();
-		//this.data_licenziamento = new Date();
+		this.data_licenziamento = new Date();
 		categoria = 0;
 		username = "Sconosciuto";
-		password = "Sconosciuto";			
+		email = "Sconosciuto";
+		password = "Sconosciuto";
+		this.id_reparto = 0;
 	}
 	public Dipendente(Dipendente d) {
 		this.setIdDipendente();
@@ -40,12 +43,13 @@ public class Dipendente {
 		this.codice_fiscale = d.getCodiceFiscale();
 		this.email = d.getEmail();
 		this.data_assunzione = d.getDataAssunzione();
-		/*this.data_licenziamento = d.getDataLicenziamento();*/
+		this.data_licenziamento = d.getDataLicenziamento();
 		this.categoria = d.getCategoria();
 		this.username = d.getUsername();
 		this.password = d.getPassword();
+		this.id_reparto = d.getIdReparto();
 	}
-	public Dipendente(int id_dipendente, Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password) {
+	public Dipendente(int id_dipendente, Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password, int id_reparto) {
 		this.setIdDipendenteByValue(id_dipendente);
 		boolean state = false;
 		state = this.setDataNascita(data_nascita);
@@ -68,6 +72,8 @@ public class Dipendente {
 		this.username = (state) ? this.username : "Sconosciuto";
 		state = this.setPassword(password);
 		this.password = (state) ? this.password : "000000000000";
+		state = this.setIdReparto(id_reparto);
+		this.id_reparto = (state) ? this.id_reparto : 0;
 	}
 	
 	//Proprietà
@@ -100,7 +106,9 @@ public class Dipendente {
 	public boolean setNome(String nome) {
 		if(nome.length() >= 2 && nome.length() <= 32) {
 			for(int i=0; i<nome.length(); i++) {
-				if(!(nome.charAt(i) >= 65 && nome.charAt(i) <= 90) || !(nome.charAt(i) >= 97 && nome.charAt(i) <= 122))
+				if((nome.charAt(i) >= 65 && nome.charAt(i) <= 90) || (nome.charAt(i) >= 97 && nome.charAt(i) <= 122))
+					continue;
+				else
 					return false;
 			}
 			this.nome = nome;
@@ -116,8 +124,10 @@ public class Dipendente {
 	public boolean setCognome(String cognome) {
 		if(cognome.length() >= 2 && cognome.length() <= 32) {
 			for(int i=0; i<nome.length(); i++) {
-				if(!(cognome.charAt(i) >= 65 && cognome.charAt(i) <= 90) || !(cognome.charAt(i) >= 97 && cognome.charAt(i) <= 122))
-					return false;
+				if((cognome.charAt(i) >= 65 && cognome.charAt(i) <= 90) || (cognome.charAt(i) >= 97 && cognome.charAt(i) <= 122))
+					continue;
+				else
+					return false;	
 			}
 			this.cognome = cognome;
 			return true;
@@ -131,7 +141,9 @@ public class Dipendente {
 	public boolean setCodiceFiscale(String codice_fiscale) {
 		if(codice_fiscale.length() == 16) {
 			for(int i=0; i<codice_fiscale.length(); i++) {
-				if(!(codice_fiscale.charAt(i) >= 65 && codice_fiscale.charAt(i) <= 90) || !(codice_fiscale.charAt(i) >= 48 && codice_fiscale.charAt(i) <= 57))
+				if((codice_fiscale.charAt(i) >= 65 && codice_fiscale.charAt(i) <= 90) || (codice_fiscale.charAt(i) >= 48 && codice_fiscale.charAt(i) <= 57))
+					continue;
+				else
 					return false;
 			}
 			this.codice_fiscale = codice_fiscale;
@@ -149,8 +161,10 @@ public class Dipendente {
 			for(int i=0; i<email.length(); i++) {
 				if(email.charAt(i) == '@' && !state)
 					state = true;
-				if(email.charAt(i) == '.' && state)
+				if(email.charAt(i) == '.' && state) {
+					this.email = email;
 					return true;
+				}
 			}
 			return false;
 		}
@@ -171,7 +185,7 @@ public class Dipendente {
 		else
 			return false;
 	}
-	/*public Date getDataLicenziamento() {
+	public Date getDataLicenziamento() {
 		return data_licenziamento;
 	}
 	public String getDataLicenziamentoString() { //restituisce la data come oggetto String nel formato AAAA-MM-GG
@@ -184,7 +198,7 @@ public class Dipendente {
 		}
 		else
 			return false;
-	}*/
+	}
 	public int getCategoria() {
 		return categoria;
 	}
@@ -204,10 +218,6 @@ public class Dipendente {
 			if(!(username.charAt(0) >= 65 && username.charAt(0) <= 90) && !(username.charAt(0) >= 97 && username.charAt(0) <= 122))
 				return false;
 			else {
-				for(int i=0; i<username.length(); i++) {
-					if(!(username.charAt(i) >= 65 && username.charAt(i) <= 90) || !(username.charAt(i) >= 48 && username.charAt(i) <= 57) || !(username.charAt(i) == '_'))
-						return false;
-				}
 				this.username = username;
 				return true;
 			}
@@ -221,7 +231,9 @@ public class Dipendente {
 	public boolean setPassword(String password) {
 		if(password.length() >= 8 && password.length() <= 16) {
 			for(int i=0; i<password.length(); i++) {
-				if(!(password.charAt(i) >= 65 && password.charAt(i) <= 90) || !(password.charAt(i) >= 48 && password.charAt(i) <= 57) || !(password.charAt(i) >= 97 && password.charAt(i) <= 122))
+				if((password.charAt(i) >= 65 && password.charAt(i) <= 90) || (password.charAt(i) >= 48 && password.charAt(i) <= 57) || (password.charAt(i) >= 97 && password.charAt(i) <= 122))
+					continue;
+				else
 					return false;
 			}
 			this.password = password;
@@ -230,15 +242,25 @@ public class Dipendente {
 		else
 			return false;
 	}
+	public boolean setIdReparto(int id_reparto) {
+		if(id_reparto >= 1) {
+			this.id_reparto = id_reparto;
+			return true;
+		}
+		return false;
+	}
+	public int getIdReparto() {
+		return this.id_reparto;
+	}
 	
 	//toString
 	public String toString() { //ritorna un oggetto String contenente tuttii campi dell'istanza, separati dalla virgola (,)
-		return this.id_dipendente + "," + this.getDataNascitaString() + "," + this.nome + "," + this.cognome + "," + this.codice_fiscale + "," + this.email + "," + this.getDataAssunzioneString() + "," /*+ this.getDataLicenziamentoString() + ","*/ + this.categoria + "," + this.username + "," + this.password;
+		return this.id_dipendente + "," + this.getDataNascitaString() + "," + this.nome + "," + this.cognome + "," + this.codice_fiscale + "," + this.email + "," + this.getDataAssunzioneString() + "," + this.getDataLicenziamentoString() + "," + this.categoria + "," + this.username + "," + this.password + "," + this.id_reparto;
 	}
 	
 	//equals
 	public boolean equals(Dipendente d) {
-		if(this.data_nascita.equals(d.getDataNascita()) && this.nome.equals(d.getNome()) && this.cognome.equals(d.getCognome()) && this.codice_fiscale.equals(d.getCodiceFiscale()) && this.data_assunzione.equals(d.getDataAssunzione()) /*&& this.data_licenziamento.equals(d.getDataLicenziamento())*/ && this.categoria == d.getCategoria() && this.username.contentEquals(d.getUsername()) && this.password.contentEquals(d.getPassword()))
+		if(this.data_nascita.equals(d.getDataNascita()) && this.nome.equals(d.getNome()) && this.cognome.equals(d.getCognome()) && this.codice_fiscale.equals(d.getCodiceFiscale()) && this.data_assunzione.equals(d.getDataAssunzione()) && this.data_licenziamento.equals(d.getDataLicenziamento()) && this.categoria == d.getCategoria() && this.username.contentEquals(d.getUsername()) && this.password.contentEquals(d.getPassword()) && this.id_reparto == d.getIdReparto())
 			return true;
 		return false;
 	}

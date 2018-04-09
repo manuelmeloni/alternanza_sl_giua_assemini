@@ -30,6 +30,13 @@
 	</head>
 	<body>
 		<%@ include file = "header.jsp" %>
+		<%@ page import = "it.gov.giua.database.dao.DipendentiDAO" %>
+		<%@ page import = "it.gov.giua.model.Dipendente" %>
+		<%
+		DipendentiDAO dDAO = new DipendentiDAO();
+		String username = (String) session.getAttribute("username");
+		Dipendente d = new Dipendente(dDAO.getDipendente(username));
+		%>
 		<!-- Pagina della gestione del Dipendente -->
 		<main>
 			<div class="row" id="subNav">
@@ -42,25 +49,27 @@
 				<div class="jumbotron" id="modificaProfilo">
 					<!-- Necessario DipendentiDAO -->
 				  <a name="prof"><h2>Gestione Profilo</h2></a>
-				  <p>Nome: <strong>Nome Dipendente</strong><em>(Non modificabile)</em></p>
-				  <p>Cognome: <strong>Cognome Dipendente</strong><em>(Non modificabile)</em></p>
-				  <p>Nascita: <strong>Data Nascita Dipendente</strong><em>(Non modificabile)</em></p>
-				  <p>Codice Fiscale: <strong>Codice Fiscale Dipendente</strong><em>(Non modificabile)</em></p>
-				  <p>Assunzione: <strong>Data Assunzione Dipendente</strong><em>(Non modificabile)</em></p>
-				  <p>Licenziamento: <strong>Data Licenziamento Dipendente</strong><em>(Non modificabile)</em></p>
-				  <p>Categoria: <strong>2 (Dipendente)</strong><em>(Non modificabile)</em></p>
-				  <p>Username: <strong>Username Dipendente</strong> <input type="text" class="textField"/></p>
-				  <p>E-mail: <strong>E-mail Dipendente</strong> <input type="text" class="textField"/></p>
-				   <p>Vecchia Password: <input type="password" class="textField"/> Nuova Password:  <input type="password" class="textField"/></p>
-				  <p><a class="btn btn-primary btn-lg" href="#" role="button">Salva le Modifiche</a></p>
+				  <p>Nome: <strong><%= d.getNome() %></strong><em>(Non modificabile)</em></p>
+					  <p>Cognome: <strong><%= d.getCognome() %></strong><em>(Non modificabile)</em></p>
+					  <p>Nascita: <strong><%= d.getDataNascita() %></strong><em>(Non modificabile)</em></p>
+					  <p>Codice Fiscale: <strong><%= d.getCodiceFiscale() %></strong><em>(Non modificabile)</em></p>
+					  <p>Assunzione: <strong><%= d.getDataAssunzione() %></strong><em>(Non modificabile)</em></p>
+					  <p>Licenziamento: <strong>Attualmente Lavorando</strong><em>(Non modificabile)</em></p>
+					  <p>Categoria: <strong><%=d.getCategoria() %></strong><em>(Non modificabile)</em></p>
+					  <p>Username: <strong><%=d.getUsername() %></strong> <input type="text" class="textField" name="username"/></p>
+					  <p>E-mail: <strong><%= d.getEmail() %></strong> <input type="text" class="textField" name="email"/></p>
+					  <p>Vecchia Password: <input type="password" class="textField" name="oldPass"/> Nuova Password:  <input type="password" class="textField" name="newPass"/></p>
+					  <p>ID reparto di lavoro: <strong><%= d.getIdReparto() %></strong> <em>(Non modificabile)</em></p>
 				</div>
 			</div>
+			<% if(d.getIdReparto() == 2) { %>
 			<div class="row">
 				<div class="jumbotron" id="gestioneTriage">
 					<a name="tri"><h2>Gestione Triage</h2></a>
-					<!-- Necessario DipendentiDAO -->
+					
 				</div>
 			</div>
+			<% } %>
 		</main>
 		<%@ include file = "footer.jsp" %>
 	</body>

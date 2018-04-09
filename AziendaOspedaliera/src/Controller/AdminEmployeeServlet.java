@@ -46,7 +46,8 @@ public class AdminEmployeeServlet extends HttpServlet {
 	        	rd.forward(request, response);
 	        break;
 	        case 2:
-	        	out.println("Benvenuto Dottor "+sessionUsername);
+	        	RequestDispatcher r = request.getRequestDispatcher("ProfiloDipendente.jsp");
+	        	r.forward(request, response);
 	        break;	
 	        }
 	}

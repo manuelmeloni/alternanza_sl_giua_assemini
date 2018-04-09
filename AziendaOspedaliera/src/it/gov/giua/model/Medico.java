@@ -27,8 +27,8 @@ public class Medico extends Dipendente {
 		state = this.setReparto(reparto);
 		this.reparto = (state) ? this.reparto : "Sconosciuto";
 	}
-	public Medico(Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password, String specializzazione, String reparto) {
-		super(data_nascita, nome, cognome, codice_fiscale, email, data_assunzione, data_licenziamento, categoria, username, password);
+	public Medico(Date data_nascita, String nome, String cognome, String codice_fiscale, String email, Date data_assunzione, Date data_licenziamento, int categoria, String username, String password, int id_reparto, String specializzazione, String reparto) {
+		super(0, data_nascita, nome, cognome, codice_fiscale, email, data_assunzione, data_licenziamento, categoria, username, password, id_reparto);
 		
 	}
 	
