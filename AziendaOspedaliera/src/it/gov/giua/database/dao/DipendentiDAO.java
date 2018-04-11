@@ -76,6 +76,29 @@ public class DipendentiDAO extends BaseDAO {
 		}
 	}
 	
+	public List<Utente> getAllUtenti() {
+		List<Utente> uList = new ArrayList<Utente>();
+		String query = "SELECT * FROM utenti";
+		try {
+			ResultSet rs = getDbm().performQuery(query);
+			while(rs.next()) {
+				int id_utente = rs.getInt("ID-UTENTE");
+				Date data_nascita=	rs.getDate("DATA_NASCITA");
+				String nome = rs.getString("NOME");
+				String cognome = rs.getString("COGNOME");
+				String codice_fiscale = rs.getString("CODICE_FISCALE");
+				int id_rep = rs.getInt("reparti_ID_REPARTO");
+				Utente current = new Utente(data_nascita, nome, cognome, codice_fiscale, id_utente, id_rep);
+				uList.add(current);
+			}
+			return uList;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public void addUtentInList(Utente u) {
 		try {
 			String query = "INSERT INTO `utenti` (`ID-UTENTE`, `DATA_NASCITA`, `NOME`, `COGNOME`, `CODICE_FISCALE`, `reparti_ID_REPARTO`) VALUES (NULL, '" + u.getNascita() + "', '" + u.getNome() + "', '" + u.getCognome() + "', '" + u.getCodiceFiscale() + "', '" + u.getIdReparto() + "');";

@@ -36,10 +36,8 @@ public class AdminEmployeeServlet extends HttpServlet {
 	        out.println("contenuto di sessionRole: ( "+sessionRole+" )");
 	        switch(sessionRole) {
 	        case 0:
-	        	out.println("Benvenuto Admin "+sessionUsername);
-	        	Login login= new Login();
-	        	login.setCategoria(sessionRole);
-	        	login.setUsername(sessionUsername);
+	        	//out.println("Benvenuto Admin "+sessionUsername);
+			response.sendRedirect(request.getContextPath() + "/EditAmministratore.jsp");
 	        break;
 	        case 1:
 	        	response.sendRedirect(request.getContextPath() + "/EditMedico.jsp");

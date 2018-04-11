@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.Date;
-
+import it.gov.giua.model.Amministratore;
 import it.gov.giua.model.Dipendente;
 import it.gov.giua.model.News;
 import it.gov.giua.model.Utente;
@@ -15,6 +15,35 @@ public class AdminDAO extends BaseDAO {
 	
 	public AdminDAO() {
 		super();
+	}
+	
+	public Dipendente getAmministratore() {
+		String query = "SELECT * FROM dipendenti WHERE CATEGORIA = 0 LIMIT 1";
+		try {
+			ResultSet rs = getDbm().performQuery(query);
+			if(rs.next()) {
+				int id_dipendente = rs.getInt("id_dipendente");
+				Date data_nascita=	rs.getDate("data_nascita");
+				String nome = rs.getString("nome");
+				String cognome = rs.getString("cognome");
+				String codice_fiscale= rs.getString("codice_fiscale");
+				String mail= rs.getString("mail");
+				Date data_assunzione=	rs.getDate("data_assunzione");			
+				Date data_licenziamento = rs.getDate("data_licenziamento");
+				int categoria= rs.getInt("categoria");
+				String username= rs.getString("username");
+				String password= rs.getString("password");
+				int id_reparto = rs.getInt("reparti_ID_REPARTO");
+				Dipendente admin = new Dipendente(id_dipendente, data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
+				return admin;
+			}
+			else
+				return null;
+		}
+		catch(Exception e) {
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	public List<Utente> getAllUsers(String query) {
@@ -120,5 +149,5 @@ public class AdminDAO extends BaseDAO {
 		return "insert into dipendenti ('DATA_NASCITA','NOME','COGNOME','CODICE_FISCALE','MAIL','DATA_ASSUNZIONE','DATA_LICENZIAMENTO','CATEGORIA','USERNAME','PASSWORD','reparti_ID_REPARTO')"
 				+ "VALUES ("+data_nascita+","+nome+","+cognome+","+codice_fiscale+","+mail+","+data_assunzione+","+data_licenziamento+","+categoria+","+username+","+password+")";
 	} 
-
+	
 }
