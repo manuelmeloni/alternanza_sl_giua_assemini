@@ -8,8 +8,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import it.gov.giua.database.dao.AdminDAO;
+import it.gov.giua.model.Dipendente;
 
 @WebServlet("/AdminServlet")
 public class AdminServlet extends HttpServlet {
@@ -23,7 +25,12 @@ public class AdminServlet extends HttpServlet {
 		  PrintWriter out = response.getWriter();
 	      String username= request.getParameter("username");
 	      AdminDAO admin= new AdminDAO();
-	      //Dipendente d= new Dipendente(admin.insertDipendente(request.getParameter("dataNascita"), request.getParameter("nome"), cognome, codice_fiscale, mail, data_assunzione, data_licenziamento, categoria, username, password))
+	      HttpSession session = request.getSession(); 
+	      Dipendente dip=new Dipendente(admin.getDipendente((String)session.getAttribute("username")));
+	      //invocazione di un metodo classe dao
+	     admin.modificaDipendente(dip);
+	     //SEMICOMPLETO: ATTENZIONE: NECESSARIA LA JSP
+	     
 	}
 
 }

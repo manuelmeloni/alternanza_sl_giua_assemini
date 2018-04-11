@@ -1,5 +1,6 @@
 package it.gov.giua.model;
 import java.util.Date;
+
 import java.time.LocalDate;
 
 public class Dipendente {

@@ -18,10 +18,10 @@ public class AdminDAO extends BaseDAO {
 	}
 	
 	public Dipendente getAmministratore() {
-		String query = "SELECT * FROM dipendenti WHERE CATEGORIA = 0 LIMIT 1";
+		String query = "SELECT * FROM dipendenti WHERE CATEGORIA = 0";
 		try {
 			ResultSet rs = getDbm().performQuery(query);
-			if(rs.next()) {
+			while(rs.next()) {
 				int id_dipendente = rs.getInt("id_dipendente");
 				Date data_nascita=	rs.getDate("data_nascita");
 				String nome = rs.getString("nome");
@@ -37,7 +37,7 @@ public class AdminDAO extends BaseDAO {
 				Dipendente admin = new Dipendente(id_dipendente, data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
 				return admin;
 			}
-			else
+			
 				return null;
 		}
 		catch(Exception e) {
@@ -46,6 +46,17 @@ public class AdminDAO extends BaseDAO {
 		}
 	}
 	
+	public void modificaDipendente(Dipendente dip) {
+		String query="UPDATE dipendenti SET  DATA_LICENZIAMENTO = ?";
+		try {
+			ResultSet rs = getDbm().performQuery(query);
+			//rs.update(1, dip.getDataLicenziamento());
+			
+		}catch(Exception e) {
+			System.out.println(e);
+		}
+		return;
+	}
 	public List<Utente> getAllUsers(String query) {
 		logger.info("Recupero di tutti i pazienti");
 		List<Utente> listaUtenti = new ArrayList<>();
@@ -63,7 +74,7 @@ public class AdminDAO extends BaseDAO {
 				 String codice_fiscale=rs.getString("CODICE_FISCALE");
 				 
 				 //Creare un nuovo oggetto di tipo Utente
-				 Utente utente= new Utente(codice_fiscale,id_utente,id_reparto,data_nascita,nome,cognome);
+				 Utente utente= new Utente(data_nascita,nome,cognome,codice_fiscale,id_utente,id_reparto);
 				 listaUtenti.add(utente);
 				//inserirlo nella lista da restituire in uscita
 				
@@ -79,7 +90,7 @@ public class AdminDAO extends BaseDAO {
 	 * Aggiungi dipendente
 	 */
 	public String insertUser(String query) {
-		
+		///QUERY
 		
 		try {
 			int rs = getDbm().executeUpdate(query); 	//restituisce il risultato della query eseguita sul db
@@ -123,7 +134,7 @@ public class AdminDAO extends BaseDAO {
 				 
 				 
 				 //Creare un nuovo oggetto di tipo Utente
-				 Dipendente dip= new Dipendente(data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password);
+				 Dipendente dip= new Dipendente(id_utente,data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
 				 //inserirlo nella lista da restituire in uscita
 				listaDipendenti.add(dip);
 				
@@ -149,5 +160,43 @@ public class AdminDAO extends BaseDAO {
 		return "insert into dipendenti ('DATA_NASCITA','NOME','COGNOME','CODICE_FISCALE','MAIL','DATA_ASSUNZIONE','DATA_LICENZIAMENTO','CATEGORIA','USERNAME','PASSWORD','reparti_ID_REPARTO')"
 				+ "VALUES ("+data_nascita+","+nome+","+cognome+","+codice_fiscale+","+mail+","+data_assunzione+","+data_licenziamento+","+categoria+","+username+","+password+")";
 	} 
+	//getdipendente
+	public Dipendente getDipendente(String user) {
+		
+		String query="SELECT * from dipendenti where USERNAME = ' " + user + " ' ";
+		try {
+			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
+			while (rs.next()) {//scorre le righe della tabella/resultSet/ rs.next()=metodo che scorre le riche nella tabella
+
+				// recuperare i campi dal result set
+				 int id_utente=  rs.getInt("ID_UTENTE");
+				 int id_reparto=  rs.getInt("reparto_ID_REPARTO");
+				 Date data_nascita= rs.getDate("DATA_NASCITA");
+				 String nome= rs.getString("NOME");
+				 String cognome= rs.getString("COGNOME");
+				 String codice_fiscale=rs.getString("CODICE_FISCALE");
+				 String mail= rs.getString("MAIL");
+				 Date data_assunzione= rs.getDate("DATA_ASSUNZIONE");
+				 Date data_licenziamento= rs.getDate("DATA_LICENZIAMENTO");
+				 int categoria= rs.getInt("CATEGORIA");
+				 String username= rs.getString("USERNAME");
+				 String password= rs.getString("PASSWORD");
+				 //Creare un nuovo oggetto di tipo Dipendente
+				 Dipendente dip= new Dipendente(id_utente,data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
+				 //controlli sulla data di licenziamento in modificaDipendente
+				 return dip;
+				 
+					 
+				 
+				
+			}
+		} catch (SQLException e) {
+			logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
+			return null;
+		}
+		return null;
+		
+	}
+	
 	
 }
