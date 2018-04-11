@@ -25,12 +25,10 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		request.getRequestDispatcher("admin.jsp").include(request, response);  
-		 
 	    PrintWriter out = response.getWriter();
         HttpSession session=request.getSession();  
         session.invalidate();  
-          
+        response.sendRedirect(request.getContextPath() + "/Home_Page.jsp");  
         out.println("Sei stato disconnesso con successo!"); 
 	}
 

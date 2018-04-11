@@ -23,11 +23,13 @@
       <li><a href="DoveSiamo.jsp">Dove Siamo</a></li>
       <li><a href="main.jsp">News</a></li>
     </ul>
+    <form action="LogoutServlet" method="post">
     <ul class="nav navbar-nav navbar-right">
        <li class="nav-item dropdown">
-      	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Esci </a>
+      	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="submit" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Esci </a>
     </li>
     </ul>
+    </form>
      </div>
   </div>
 </nav>
