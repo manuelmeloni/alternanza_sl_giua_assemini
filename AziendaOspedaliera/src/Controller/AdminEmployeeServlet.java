@@ -42,12 +42,14 @@ public class AdminEmployeeServlet extends HttpServlet {
 	        	login.setUsername(sessionUsername);
 	        break;
 	        case 1:
-	        	RequestDispatcher rd = request.getRequestDispatcher("EditMedico.jsp");
-	        	rd.forward(request, response);
+	        	response.sendRedirect(request.getContextPath() + "/EditMedico.jsp");
+	        	//RequestDispatcher rd = request.getRequestDispatcher("EditMedico.jsp");
+	        	//rd.forward(request, response);
 	        break;
 	        case 2:
-	        	RequestDispatcher r = request.getRequestDispatcher("ProfiloDipendente.jsp");
-	        	r.forward(request, response);
+	        	response.sendRedirect(request.getContextPath() + "/EditMedico.jsp");
+	        	//RequestDispatcher r = request.getRequestDispatcher("ProfiloDipendente.jsp");
+	        	//r.forward(request, response);
 	        break;	
 	        }
 	}

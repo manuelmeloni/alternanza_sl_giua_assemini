@@ -44,14 +44,13 @@ public class ControllerPrelievi extends HttpServlet{
 		if(pre!=null) {
 		HttpSession session= req.getSession();
 		session.setAttribute("visita", pre);
-		resp.sendRedirect("analisi.jsp");
+		resp.sendRedirect("../AziendaOspedaliera/analisi.jsp");
 		}
 		else if( rec!=null) {
 			
 			HttpSession session= req.getSession();
 			session.setAttribute("visita", rec);
 			resp.sendRedirect("referto.jsp");
-			
 		}
 		else {
 			

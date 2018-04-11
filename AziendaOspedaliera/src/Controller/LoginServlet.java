@@ -30,6 +30,10 @@ public class LoginServlet extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
+    
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -54,15 +58,15 @@ public class LoginServlet extends HttpServlet {
         out.println("Scope della sessione "+sessionUsername);
         if(login.checkUser(username, pass))
         {
-        	
             RequestDispatcher rs = request.getRequestDispatcher("AdminEmployeeServlet");
             rs.forward(request, response);
         }
         else
         {			
            out.println("L'username o la password sono incorrette!");
-           RequestDispatcher rs = request.getRequestDispatcher("Home_Page.jsp");
-           rs.include(request, response);
+           response.sendRedirect(request.getContextPath() + "/Home_Page.jsp");
+           //RequestDispatcher rs = request.getRequestDispatcher("Home_Page.jsp");
+           //rs.include(request, response);
         }
     }  
 	
