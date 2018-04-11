@@ -50,7 +50,7 @@ public class UtenteDAO extends BaseDAO {
 		}	
 	 
 	 public boolean controlloCF(String cf) throws SQLException {
-		 ResultSet rs = getDbm().performQuery("select 'CODICE_FISCALE' from utenti where utenti.CODICE_FISCALE = '"+cf+"';");
+		 ResultSet rs = getDbm().performQuery("select 'CODICE_FISCALE' from utenti where CODICE_FISCALE = '"+cf+"';");
 		 if(rs == null)
 			 return false;
 		 else
