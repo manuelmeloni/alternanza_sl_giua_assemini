@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,19 +34,24 @@ public class ControllerUtente extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+	    resp.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = resp.getWriter();
+        HttpSession session = req.getSession();
+        String cf=req.getParameter("CodiceFiscale");
+        session.setAttribute("CodiceFiscale",cf );
+        
 		UtenteDAO dao=new UtenteDAO();
 		
 		try {
-			if(dao.controlloCF(req.getParameter("CodiceFiscale"))==false){
-				resp.sendRedirect("InserisciUtente.jsp");		
-				
+			if(dao.controlloCF(cf)==false){
+				RequestDispatcher rs = req.getRequestDispatcher("InserisciUtente.jsp");		
+				 rs.include(req, resp);
 			}
 			
 			else {
 				
-				resp.sendRedirect("InserisciRicovero.jsp");			
-				
+				RequestDispatcher rs = req.getRequestDispatcher("InserisciRicovero.jsp");			
+				 rs.include(req, resp);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

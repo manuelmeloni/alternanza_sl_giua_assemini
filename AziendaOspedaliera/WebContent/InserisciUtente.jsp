@@ -42,7 +42,7 @@
 
 
 
- <%@ include file = "InserisciRicovero.jsp" %>	 
+ 	 
 
 </div>
 	</center>
