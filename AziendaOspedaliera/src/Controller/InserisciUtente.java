@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import it.gov.giua.database.dao.RicoveroDAO;
 import it.gov.giua.database.dao.UtenteDAO;
+import it.gov.giua.model.Utente;
 
 @WebServlet("/InserisciUtente")
 public class InserisciUtente extends HttpServlet {
@@ -38,7 +39,8 @@ public class InserisciUtente extends HttpServlet {
       
         try {
         	dao.setUtente(nome, cognome, cf,anno,mese,giorno);
-        	 
+        	Utente utente= dao.getUtentebyCodFiscale(cf);
+        	session.setAttribute("InserimentoPaziente", utente);
         	resp.sendRedirect(req.getContextPath() + "/InserisciRicovero.jsp");
 			
 		} catch (SQLException e) {
