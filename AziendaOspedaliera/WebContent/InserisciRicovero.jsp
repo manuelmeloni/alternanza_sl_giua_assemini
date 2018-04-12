@@ -18,17 +18,26 @@
 <%@ include file = "header.jsp" %>
 	<center>
 <h2> DATI DEL RICOVERO</h2>
-<form>
-<textarea placeholder="Diagnosi" class="form-control" ></textarea>
+<form action="InserisciRicovero" method="post">
+<textarea placeholder="Diagnosi" class="form-control" name="diagnosi"></textarea>
 <br>
-<textarea placeholder="Terapia" class="form-control" ></textarea>
+<textarea placeholder="Terapia" class="form-control" name="terapia" ></textarea>
 <br>
- <input type="text" class="form-control" placeholder="CodiceRicovero">
+ <input type="text" class="form-control" placeholder="CodiceRicovero" name="codiceRicovero">
   <br>
   
   
-  <input type="text" class="form-control" placeholder="Codice Colore, ex: 1,2,3,4">
-
+  <input type="text" class="form-control" placeholder="Codice Colore, ex: 1,2,3,4"name="codiceColore"> <br>
+  
+  <input type="text" class="form-control" placeholder="Data di ingresso/anno" name="dataInY"> <br>
+  <input type="text" class="form-control" placeholder="Data di ingresso/mese" name="dataInM"> <br>
+  <input type="text" class="form-control" placeholder="Data di ingresso/giorno" name="dataInD"> <br>
+  
+   <input type="text" class="form-control" placeholder="Data di uscita/anno" name="dataOutY"> <br>
+  <input type="text" class="form-control" placeholder="Data di uscita/mese" name="dataOutM"> <br>
+  <input type="text" class="form-control" placeholder="Data di uscita/giorno" name="dataOutD"><br>
+  
+  <button type="submit" value="login" class="btn btn-primary">Invia</button>
 </form>
 
 
