@@ -5,6 +5,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
+
+
+
 import java.util.Date;
 import it.gov.giua.model.Amministratore;
 import it.gov.giua.model.Dipendente;
@@ -46,16 +49,27 @@ public class AdminDAO extends BaseDAO {
 		}
 	}
 	
-	public void modificaDipendente(Dipendente dip) {
-		String query="UPDATE dipendenti SET  DATA_LICENZIAMENTO = ?";
+	public String updateDipendente(Dipendente dip) {
+		
+		
+		String query="update dipendenti set data_nascita='"+dip.getDataNascitaString()+"',nome='"+dip.getNome()+"',cognome='"+dip.getCognome()+"',codice_fiscale='"+dip.getCodiceFiscale()+"',"
+				+ "mail='"+dip.getEmail()+"',data_assunzione='"+dip.getDataAssunzioneString()+"',data_licenziamento='"+dip.getDataLicenziamentoString()+"',categoria='"+dip.getCategoria()+"',"
+				+ "username='"+dip.getUsername()+"',password='"+dip.getPassword()+"',reparti_id_reparto='"+dip.getIdReparto()
+						+ "where id_dipendente='"+dip.getIdDipendente()+"'";
 		try {
-			ResultSet rs = getDbm().performQuery(query);
-			//rs.update(1, dip.getDataLicenziamento());
+			int rs = getDbm().executeUpdate(query);
+			if(rs>0) {
+				return "Aggiornamento eseguito correttamente";
+				
+			}else return "Errore nell'inserimento dell'aggiornamento";
+			
 			
 		}catch(Exception e) {
 			System.out.println(e);
+			return "Errore nell'esecuzione della query";
 		}
-		return;
+		
+	
 	}
 	public List<Utente> getAllUsers(String query) {
 		logger.info("Recupero di tutti i pazienti");
@@ -89,11 +103,12 @@ public class AdminDAO extends BaseDAO {
 	/**
 	 * Aggiungi dipendente
 	 */
-	public String insertUser(String query) {
-		///QUERY
-		
+	public String insertUser(Dipendente dip) {
+	
+		 
 		try {
-			int rs = getDbm().executeUpdate(query); 	//restituisce il risultato della query eseguita sul db
+			
+			int rs = getDbm().executeUpdate(insertDipendente(dip.getDataNascita(), dip.getNome(), dip.getCognome(), dip.getCodiceFiscale(), dip.getEmail(), dip.getDataAssunzione(), dip.getDataLicenziamento(), dip.getCategoria(), dip.getUsername(), dip.getPassword())); 	//restituisce il risultato della query eseguita sul db
 			if(rs>0) {
 				return "Inserimento eseguito correttamente";
 				
@@ -197,6 +212,78 @@ public class AdminDAO extends BaseDAO {
 		return null;
 		
 	}
+	public int contaCodiceBianco() {
+		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore= '0' ";
+		try {
+			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
+			while (rs.next()) {
+				int nBianchi= rs.getInt("nPazienti");
+				return nBianchi;
+			}
+				
+			} catch (SQLException e) {
+				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
+				return 0;
+			}
+		return 0;
+	}
+	public int contaCodiceVerde() {
+		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore= '1' ";
+		try {
+			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
+			while (rs.next()) {
+				int nVerdi= rs.getInt("nPazienti");
+				return nVerdi;
+			}
+				
+			} catch (SQLException e) {
+				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
+				return 0;
+			}
+		return 0;
+		
+	}
+	public int contaCodiceGiallo() {
+		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore = '2'";
+		try {
+			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
+			while (rs.next()) {
+				int nGialli= rs.getInt("nPazienti");
+				return nGialli;
+			}
+				
+			} catch (SQLException e) {
+				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
+				return 0;
+			}
+		return 0;
+		
+	}
+	public int contaCodiceRosso() {
+		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore = '3'";
+		try {
+			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
+			while (rs.next()) {
+				int nRossi= rs.getInt("nPazienti");
+				return nRossi;
+			}
+				
+			} catch (SQLException e) {
+				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
+				return 0;
+			}
+		return 0;
+		
+	}
+	///lista pazienti al pronto soccorso
+	/*public List<Utente> getAllUsersPS() {
+		
+		
+		
+				
+	}
+	
+	*/
 	
 	
 }

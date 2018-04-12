@@ -1,10 +1,14 @@
+  <%@page import="it.gov.giua.database.dao.AdminDAO"%>
+  <%
+  	AdminDAO admin= new AdminDAO();
+  %>
   <div class="mydiv">
  <div id="mySidenav" class="sidenav" >
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <h3><i class="fas fa-circle" style="color:white"></i>&nbsp; XX persone</h3>
-  <h3><i class="fas fa-circle" style="color:green"></i>&nbsp; XX persone</h3>
-  <h3><i class="fas fa-circle" style="color:yellow"></i>&nbsp; XX persone</h3>
-  <h3><i class="fas fa-circle" style="color:red"></i>&nbsp; XX persone</h3>
+  <h3><i class="fas fa-circle" style="color:white"></i>&nbsp; <%=admin.contaCodiceBianco() %> persone</h3>
+  <h3><i class="fas fa-circle" style="color:green"></i>&nbsp; <%=admin.contaCodiceVerde() %> persone</h3>
+  <h3><i class="fas fa-circle" style="color:yellow"></i>&nbsp; <%=admin.contaCodiceGiallo() %> persone</h3>
+  <h3><i class="fas fa-circle" style="color:red"></i>&nbsp; <%=admin.contaCodiceRosso() %> persone</h3>
   </div>
   </div>
 
