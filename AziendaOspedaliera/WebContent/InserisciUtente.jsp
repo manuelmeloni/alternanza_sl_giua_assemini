@@ -14,31 +14,42 @@
   
 </head>
 <body>
+
+
 <%@ include file = "header.jsp" %>
 	<center>
 	<div style="padding-left:20%; padding-right:20%"> 
 	<h2> DATI DEL PAZIENTE </h2>  
  
- <div class="input-group" style="margin-top:2.5%">
-  
-    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-   
-   	<input id="email" class="form-control" type="text" placeholder="<% request.getParameter("CodiceFiscale"); %>" readonly>
+ 
     
  	 
 </div>
 
-
+<form action="InserisciUtente" method="post">
+	 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input type="text" class="form-control" name="CodiceFiscale" placeholder="Codice Fiscale" maxlength="16" >
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Nome">
+      <input type="text" class="form-control" name="Nome"placeholder="Nome">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Cognome">
+      <input type="text" class="form-control" name="Cognome" placeholder="Cognome">
     </div>
+    <div class="col">
+      <input type="text" class="form-control" name="anno" placeholder="Cognome">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" name="mese" placeholder="Cognome">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" name="giorno" placeholder="Cognome">
+    </div>
+  
   </div>
   
-</form>
+<button type="submit" value="login" class="btn btn-primary">Invia</button>
+     </form>
 
 
 

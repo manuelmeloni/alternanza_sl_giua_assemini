@@ -1,9 +1,11 @@
 package it.gov.giua.database.dao;
 
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.logging.Level;
 
@@ -39,7 +41,7 @@ public class UtenteDAO extends BaseDAO {
 			}
 		} catch (SQLException e) {
 			logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
-			
+		
 		}
 
 		return u;
@@ -50,10 +52,19 @@ public class UtenteDAO extends BaseDAO {
 		}	
 	 
 	 public boolean controlloCF(String cf) throws SQLException {
-		 ResultSet rs = getDbm().performQuery("select 'CODICE_FISCALE' from utenti where CODICE_FISCALE = '"+cf+"';");
-		 if(rs == null)
+		 ResultSet rs = getDbm().performQuery("select 'CODICE_FISCALE' from utenti where CODICE_FISCALE = '"+cf+"'");
+		 boolean b= rs.next();
+		 if(b == false)
 			 return false;
 		 else
 			 return true;
 	 }
+	 
+	 public void setUtente(String nome, String cognome, String codice_fiscale,String anno, String mese,String giorno) throws SQLException {
+		 	Date date = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+			String query="Insert into utenti (NOME,COGNOME,CODICE_FISCALE,reparti_ID_REPARTO,DATA_NASCITA) values ('"+nome+ "','" + cognome+"','"+codice_fiscale+"','2','"+anno+"-"+mese+"-"+giorno+"')";
+			int rs = getDbm().executeUpdate(query);
+			
+		
+		}
 }

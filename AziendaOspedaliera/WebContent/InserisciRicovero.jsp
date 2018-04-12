@@ -14,6 +14,7 @@
   
 </head>
 <body>
+
 <%@ include file = "header.jsp" %>
 	<center>
 <h2> DATI DEL RICOVERO</h2>
