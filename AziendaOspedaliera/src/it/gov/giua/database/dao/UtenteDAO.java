@@ -61,7 +61,7 @@ public class UtenteDAO extends BaseDAO {
 	 }
 	 
 	 public void setUtente(String nome, String cognome, String codice_fiscale,String anno, String mese,String giorno) throws SQLException {
-		 	Date date = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
+		 	// Date date = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
 			String query="Insert into utenti (NOME,COGNOME,CODICE_FISCALE,reparti_ID_REPARTO,DATA_NASCITA) values ('"+nome+ "','" + cognome+"','"+codice_fiscale+"','2','"+anno+"-"+mese+"-"+giorno+"')";
 			int rs = getDbm().executeUpdate(query);
 			

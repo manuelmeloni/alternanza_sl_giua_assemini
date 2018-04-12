@@ -1,3 +1,5 @@
+<%@page import="java.util.Calendar"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -27,15 +29,41 @@
   <br>
   
   
-  <input type="text" class="form-control" placeholder="Codice Colore, ex: 1,2,3,4"name="codiceColore"> <br>
+  <select class="form-control" style="width:auto" name="codice_colore">
+  <option>0 (bianco)</option>
+	<option>1 (verde)</option>
+	<option>2 (giallo)</option>
+	<option>3 (rosso)</option>
+	</select>
   
-  <input type="text" class="form-control" placeholder="Data di ingresso/anno" name="dataInY"> <br>
-  <input type="text" class="form-control" placeholder="Data di ingresso/mese" name="dataInM"> <br>
-  <input type="text" class="form-control" placeholder="Data di ingresso/giorno" name="dataInD"> <br>
+   <br>
+  <div>
+  <select class="form-control" style="width:auto" name="anno1">
   
-   <input type="text" class="form-control" placeholder="Data di uscita/anno" name="dataOutY"> <br>
-  <input type="text" class="form-control" placeholder="Data di uscita/mese" name="dataOutM"> <br>
-  <input type="text" class="form-control" placeholder="Data di uscita/giorno" name="dataOutD"><br>
+  <option>2018</option>
+	<option>2017</option>
+	<option>2016</option>
+	<option>2015</option>
+	</select>
+	</div>
+	
+	 <div>
+  <select class="form-control" style="width:auto" name="mese1">
+  
+    <option>01</option>
+	<option>02</option>
+	<option>03</option>
+	<option>04</option>
+	</select>
+	</div>
+	
+ <br>
+  
+  <input type="text" class="form-control" placeholder="Data di ingresso/giorno" name="giorno1"> <br>
+  
+   <input type="text" class="form-control" placeholder="Data di uscita/anno" name="anno2"> <br>
+  <input type="text" class="form-control" placeholder="Data di uscita/mese" name="mese2"> <br>
+  <input type="text" class="form-control" placeholder="Data di uscita/giorno" name="giorno2"><br>
   
   <button type="submit" value="login" class="btn btn-primary">Invia</button>
 </form>

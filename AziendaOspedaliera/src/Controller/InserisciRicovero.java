@@ -46,24 +46,34 @@ public class InserisciRicovero extends HttpServlet {
 	    resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
         HttpSession session = req.getSession();
-        Utente paziente=(Utente)session.getAttribute("InserimentoPaziente");
+        // Utente paziente=(Utente)session.getAttribute("InserimentoPaziente");
+        //recupero i dati dai form
         String diagnosi=req.getParameter("diagnosi");
         String terapia=req.getParameter("terapia");
         String codice_ricovero=req.getParameter("CodiceRicovero");
-        int codice_colore=Integer.parseInt(req.getParameter("CodiceColore"));
+        String codice_colore=req.getParameter("CodiceColore");
         String anno1=req.getParameter("anno1");
         String mese1=req.getParameter("mese1");
         String giorno1=req.getParameter("giorno1");
+        String ora1=req.getParameter("ora1");
+        String minuti1=req.getParameter("minuti1");
         String anno2=req.getParameter("anno2");
         String mese2=req.getParameter("mese2");
         String giorno2=req.getParameter("giorno2");
-
+        String ora2=req.getParameter("ora2");
+        String minuti2=req.getParameter("minuti2");
+        
+        //recupero l'id del paziente memorizzato in sessione attraverso il metodo getID della classe utente
+        int id_utente= ((Utente)session.getAttribute("InserimentoPaziente")).getID();
+        
         RicoveroDAO dao= new RicoveroDAO();
       
         try {
-        	dao.setUtente(nome, cognome, cf,anno,mese,giorno);
+        	//inserisco il ricovero nel DB attraverso il metodo setRicovero della classe RicoveroDAO
+        	
+        	dao.setRicovero(diagnosi, terapia, codice_ricovero, codice_colore, id_utente, anno1, mese1, giorno1, anno2, mese2, giorno2, ora1, minuti1, ora2, minuti2);
         	 
-        	resp.sendRedirect(req.getContextPath() + "/InserisciRicovero.jsp");
+        	resp.sendRedirect(req.getContextPath() + "/Home_Page.jsp");
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

@@ -50,7 +50,7 @@ public class ControllerUtente extends HttpServlet {
 			}
 			
 			else {
-				
+				session.setAttribute("InserimentoPaziente", dao.getUtentebyCodFiscale(cf));
 				resp.sendRedirect(req.getContextPath() + "/InserisciRicovero.jsp");			
 				 
 			}
