@@ -5,9 +5,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
-
-
-
 import java.util.Date;
 import it.gov.giua.model.Amministratore;
 import it.gov.giua.model.Dipendente;
@@ -21,10 +18,10 @@ public class AdminDAO extends BaseDAO {
 	}
 	
 	public Dipendente getAmministratore() {
-		String query = "SELECT * FROM dipendenti WHERE CATEGORIA = 0";
+		String query = "SELECT * FROM dipendenti WHERE CATEGORIA = 0 LIMIT 1";
 		try {
 			ResultSet rs = getDbm().performQuery(query);
-			while(rs.next()) {
+			if(rs.next()) {
 				int id_dipendente = rs.getInt("id_dipendente");
 				Date data_nascita=	rs.getDate("data_nascita");
 				String nome = rs.getString("nome");
@@ -40,7 +37,7 @@ public class AdminDAO extends BaseDAO {
 				Dipendente admin = new Dipendente(id_dipendente, data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
 				return admin;
 			}
-			
+			else
 				return null;
 		}
 		catch(Exception e) {
@@ -49,28 +46,6 @@ public class AdminDAO extends BaseDAO {
 		}
 	}
 	
-	public String updateDipendente(Dipendente dip) {
-		
-		
-		String query="update dipendenti set data_nascita='"+dip.getDataNascitaString()+"',nome='"+dip.getNome()+"',cognome='"+dip.getCognome()+"',codice_fiscale='"+dip.getCodiceFiscale()+"',"
-				+ "mail='"+dip.getEmail()+"',data_assunzione='"+dip.getDataAssunzioneString()+"',data_licenziamento='"+dip.getDataLicenziamentoString()+"',categoria='"+dip.getCategoria()+"',"
-				+ "username='"+dip.getUsername()+"',password='"+dip.getPassword()+"',reparti_id_reparto='"+dip.getIdReparto()
-						+ "where id_dipendente='"+dip.getIdDipendente()+"'";
-		try {
-			int rs = getDbm().executeUpdate(query);
-			if(rs>0) {
-				return "Aggiornamento eseguito correttamente";
-				
-			}else return "Errore nell'inserimento dell'aggiornamento";
-			
-			
-		}catch(Exception e) {
-			System.out.println(e);
-			return "Errore nell'esecuzione della query";
-		}
-		
-	
-	}
 	public List<Utente> getAllUsers(String query) {
 		logger.info("Recupero di tutti i pazienti");
 		List<Utente> listaUtenti = new ArrayList<>();
@@ -88,7 +63,7 @@ public class AdminDAO extends BaseDAO {
 				 String codice_fiscale=rs.getString("CODICE_FISCALE");
 				 
 				 //Creare un nuovo oggetto di tipo Utente
-				 Utente utente= new Utente(data_nascita,nome,cognome,codice_fiscale,id_utente,id_reparto);
+				 Utente utente= new Utente(codice_fiscale,id_utente,id_reparto,data_nascita,nome,cognome);
 				 listaUtenti.add(utente);
 				//inserirlo nella lista da restituire in uscita
 				
@@ -103,12 +78,11 @@ public class AdminDAO extends BaseDAO {
 	/**
 	 * Aggiungi dipendente
 	 */
-	public String insertUser(Dipendente dip) {
-	
-		 
+	public String insertUser(String query) {
+		
+		
 		try {
-			
-			int rs = getDbm().executeUpdate(insertDipendente(dip.getDataNascita(), dip.getNome(), dip.getCognome(), dip.getCodiceFiscale(), dip.getEmail(), dip.getDataAssunzione(), dip.getDataLicenziamento(), dip.getCategoria(), dip.getUsername(), dip.getPassword())); 	//restituisce il risultato della query eseguita sul db
+			int rs = getDbm().executeUpdate(query); 	//restituisce il risultato della query eseguita sul db
 			if(rs>0) {
 				return "Inserimento eseguito correttamente";
 				
@@ -149,7 +123,7 @@ public class AdminDAO extends BaseDAO {
 				 
 				 
 				 //Creare un nuovo oggetto di tipo Utente
-				 Dipendente dip= new Dipendente(id_utente,data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
+				 Dipendente dip= new Dipendente(data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password);
 				 //inserirlo nella lista da restituire in uscita
 				listaDipendenti.add(dip);
 				
@@ -175,115 +149,5 @@ public class AdminDAO extends BaseDAO {
 		return "insert into dipendenti ('DATA_NASCITA','NOME','COGNOME','CODICE_FISCALE','MAIL','DATA_ASSUNZIONE','DATA_LICENZIAMENTO','CATEGORIA','USERNAME','PASSWORD','reparti_ID_REPARTO')"
 				+ "VALUES ("+data_nascita+","+nome+","+cognome+","+codice_fiscale+","+mail+","+data_assunzione+","+data_licenziamento+","+categoria+","+username+","+password+")";
 	} 
-	//getdipendente
-	public Dipendente getDipendente(String user) {
-		
-		String query="SELECT * from dipendenti where USERNAME = ' " + user + " ' ";
-		try {
-			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
-			while (rs.next()) {//scorre le righe della tabella/resultSet/ rs.next()=metodo che scorre le riche nella tabella
-
-				// recuperare i campi dal result set
-				 int id_utente=  rs.getInt("ID_UTENTE");
-				 int id_reparto=  rs.getInt("reparto_ID_REPARTO");
-				 Date data_nascita= rs.getDate("DATA_NASCITA");
-				 String nome= rs.getString("NOME");
-				 String cognome= rs.getString("COGNOME");
-				 String codice_fiscale=rs.getString("CODICE_FISCALE");
-				 String mail= rs.getString("MAIL");
-				 Date data_assunzione= rs.getDate("DATA_ASSUNZIONE");
-				 Date data_licenziamento= rs.getDate("DATA_LICENZIAMENTO");
-				 int categoria= rs.getInt("CATEGORIA");
-				 String username= rs.getString("USERNAME");
-				 String password= rs.getString("PASSWORD");
-				 //Creare un nuovo oggetto di tipo Dipendente
-				 Dipendente dip= new Dipendente(id_utente,data_nascita,nome,cognome,codice_fiscale,mail,data_assunzione,data_licenziamento,categoria,username,password,id_reparto);
-				 //controlli sulla data di licenziamento in modificaDipendente
-				 return dip;
-				 
-					 
-				 
-				
-			}
-		} catch (SQLException e) {
-			logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
-			return null;
-		}
-		return null;
-		
-	}
-	public int contaCodiceBianco() {
-		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore= '0' ";
-		try {
-			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
-			while (rs.next()) {
-				int nBianchi= rs.getInt("nPazienti");
-				return nBianchi;
-			}
-				
-			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
-				return 0;
-			}
-		return 0;
-	}
-	public int contaCodiceVerde() {
-		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore= '1' ";
-		try {
-			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
-			while (rs.next()) {
-				int nVerdi= rs.getInt("nPazienti");
-				return nVerdi;
-			}
-				
-			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
-				return 0;
-			}
-		return 0;
-		
-	}
-	public int contaCodiceGiallo() {
-		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore = '2'";
-		try {
-			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
-			while (rs.next()) {
-				int nGialli= rs.getInt("nPazienti");
-				return nGialli;
-			}
-				
-			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
-				return 0;
-			}
-		return 0;
-		
-	}
-	public int contaCodiceRosso() {
-		String query= "select count(utenti_id_utente) as nPazienti from ricoveri where codice_colore = '3'";
-		try {
-			ResultSet rs = getDbm().performQuery(query); 	//restituisce il risultato della query eseguita sul db
-			while (rs.next()) {
-				int nRossi= rs.getInt("nPazienti");
-				return nRossi;
-			}
-				
-			} catch (SQLException e) {
-				logger.log(Level.SEVERE, "Errore nel recupero delle info ->" + e.getMessage());
-				return 0;
-			}
-		return 0;
-		
-	}
-	///lista pazienti al pronto soccorso
-	/*public List<Utente> getAllUsersPS() {
-		
-		
-		
-				
-	}
-	
-	*/
-	
 	
 }

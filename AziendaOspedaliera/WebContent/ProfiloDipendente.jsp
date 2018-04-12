@@ -76,6 +76,9 @@
 			<div class="row">
 				<div class="jumbotron" id="gestioneTriage">
 					<a name="tri"><h2>Gestione Triage</h2></a>
+					<center>
+						<td><p><p style="text-align: center !important; margin-right: 5px !important"><a class="btn btn-primary btn-lg" href="Ricovero.jsp" role="button">Ricoveri</a></p></p></td>
+					</center>
 					<table id="tabellaListaPazienti">
 					   <tr>
 					   		<th><strong>Nome Paziente</strong></th>

@@ -36,18 +36,16 @@ public class AdminEmployeeServlet extends HttpServlet {
 	        out.println("contenuto di sessionRole: ( "+sessionRole+" )");
 	        switch(sessionRole) {
 	        case 0:
-	        	//out.println("Benvenuto Admin "+sessionUsername);
-			response.sendRedirect(request.getContextPath() + "/EditAmministratore.jsp");
+	        	RequestDispatcher ra = request.getRequestDispatcher("EditAmministratore.jsp");
+	        	ra.forward(request, response);
 	        break;
 	        case 1:
-	        	response.sendRedirect(request.getContextPath() + "/EditMedico.jsp");
-	        	//RequestDispatcher rd = request.getRequestDispatcher("EditMedico.jsp");
-	        	//rd.forward(request, response);
+	        	RequestDispatcher rm = request.getRequestDispatcher("EditMedico.jsp");
+	        	rm.forward(request, response);
 	        break;
 	        case 2:
-	        	response.sendRedirect(request.getContextPath() + "/EditMedico.jsp");
-	        	//RequestDispatcher r = request.getRequestDispatcher("ProfiloDipendente.jsp");
-	        	//r.forward(request, response);
+	        	RequestDispatcher rd = request.getRequestDispatcher("ProfiloDipendente.jsp");
+	        	rd.forward(request, response);
 	        break;	
 	        }
 	}

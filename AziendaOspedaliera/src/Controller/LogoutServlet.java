@@ -3,6 +3,7 @@ package Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -25,11 +26,13 @@ public class LogoutServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-	    PrintWriter out = response.getWriter();
-        HttpSession session=request.getSession();  
+		request.getRequestDispatcher("admin.jsp").include(request, response);  
+		 
+	    //PrintWriter out = response.getWriter();
+        HttpSession session=request.getSession(); 
         session.invalidate();  
-        response.sendRedirect(request.getContextPath() + "/Home_Page.jsp");  
-        out.println("Sei stato disconnesso con successo!"); 
+        RequestDispatcher rs = request.getRequestDispatcher("Home_Page.jsp");
+        rs.forward(request, response);
 	}
 
 }
