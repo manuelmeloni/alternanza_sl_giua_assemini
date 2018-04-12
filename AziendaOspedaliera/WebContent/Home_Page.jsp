@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="java.util.List"%>
+<%@page import="it.gov.giua.database.dao.NewsDAO"%>
+<%@page import="it.gov.giua.model.News"%>
     
 
 <!DOCTYPE html>
@@ -13,10 +16,11 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/myStyle.css" rel="stylesheet">
     <link href="css/fontawesome-free-5.0.8/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="Fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="Fontawesome/web-fonts-with-css/css/fontawesome-all.min.css"/>
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+  	<link rel="stylesheet" type="text/css" href="css/DoveSiamoStyle.css"/>
   	<!-- scripts js -->
-  	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
     <script src="js/bootstrap.min.js"></script>
 	<style>
 		footer h5 { color: royalblue !important; }

@@ -1,14 +1,21 @@
-  <%@page import="it.gov.giua.database.dao.AdminDAO"%>
-  <%
-  	AdminDAO admin= new AdminDAO();
-  %>
+<%@page import="java.util.List"%>
+<%@page import="it.gov.giua.database.dao.NewsDAO"%>
+<%@page import="it.gov.giua.model.News"%> 
+
+<%//"dao" permette la connessione con il DB
+		NewsDAO dao = new NewsDAO();
+		//Creo un oggetto di tipo news, che ottiene le informazioni delle news principali
+		News news = dao.getPrincipalNews(); 
+		%>
+  
+  
   <div class="mydiv">
  <div id="mySidenav" class="sidenav" >
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <h3><i class="fas fa-circle" style="color:white"></i>&nbsp; <%=admin.contaCodiceBianco() %> persone</h3>
-  <h3><i class="fas fa-circle" style="color:green"></i>&nbsp; <%=admin.contaCodiceVerde() %> persone</h3>
-  <h3><i class="fas fa-circle" style="color:yellow"></i>&nbsp; <%=admin.contaCodiceGiallo() %> persone</h3>
-  <h3><i class="fas fa-circle" style="color:red"></i>&nbsp; <%=admin.contaCodiceRosso() %> persone</h3>
+  <h3><i class="fas fa-circle" style="color:white"></i>&nbsp; XX persone</h3>
+  <h3><i class="fas fa-circle" style="color:green"></i>&nbsp; XX persone</h3>
+  <h3><i class="fas fa-circle" style="color:yellow"></i>&nbsp; XX persone</h3>
+  <h3><i class="fas fa-circle" style="color:red"></i>&nbsp; XX persone</h3>
   </div>
   </div>
 
@@ -32,9 +39,9 @@
             			</li>
             
             <!--servizi vari home page-->
-            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#prelievi"><img src="images/file.svg" alt="Ritira documenti"><br><br><strong>Ritiro referti medici e cartella clinica </strong><br></a></li>
-            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/clock.svg"><br><br><strong>Orari</strong><br>Apertura e chiusura dell'Ospedale</a></li>
-            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#"><img src="images/news.svg" alt="Leggi consigli dal reparto"><br><br><strong>News</strong><br>News dall' Ospedale</a></li>
+            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#" data-toggle="modal" data-target="#myModal"><img src="images/file.svg" alt="Ritira documenti"><br><br><strong>Ritiro referti medici e cartella clinica </strong><br></a></li>
+            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="#" data-toggle="modal" data-target="#myotherModal"><img src="images/clock.svg"><br><br><strong>Orari</strong><br>Apertura e chiusura dell'Ospedale</a></li>
+            <li style="margin-top:3%; float: left; list-style: none; position: relative; width: 234.75px;"><a href="main.jsp"><img src="images/news.svg" alt="Leggi consigli dal reparto"><br><br><strong>News</strong><br>News dall' Ospedale</a></li>
            </ul>
             </div>
           </div>
@@ -45,7 +52,7 @@
 <!--finestre collegamento alle news-->
 <a name="prelievi">    
  <div class="col-sm-12 col-md-12" style="height:100%; padding-right: 4%; padding-left: 4%;padding-top: 2%; background-color:#F0F0FF;float:all;">
-  <div class="col-sm-10 col-md-12">
+   <div class="col-sm-6 col-md-6">
     <div class="thumbnail">
       <img src="images/medico.jpg" alt="" class="css">
       <div class="caption">
@@ -57,20 +64,42 @@
   </div>
   
 </a>  
-  <div class="col-sm-10 col-md-12">
+  <div class="col-sm-6 col-md-6" >
     <div class="thumbnail">
-      <img src="images/prelievo.jpg" alt="" class="css">
-      <div class="caption">
-        <h3>Prelievo</h3>
-        <p>...</p>
-        <p><a href="#" class="btn btn-primary" role="button">Button</a></p>
+      <h1 class="jumbotron-heading"><%=news.getTitolo() %></h1>
+		<p class="lead text-muted">
+			 <%=news.getSottotitolo() %></p> 
+
+		<p>
+			<p><a class="btn btn-default" href="SingleView.jsp?id=<%=news.getId() %>" role="button">View details »</a></p>
+		</p>
       </div>
     </div>
   </div> 
  </div> 
 
-
-    <div class="modal fade" id="myModal">
+  <div class="modal fade" id="myotherModal"> 
+  	<div class="modal-dialog">
+  		<div class="modal-content">
+        	<div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h4 class="modal-title">Orari</h4>
+        </div>
+        <div class="modal-body">
+        <div class="form-group">
+        <h1>Giorni Settimanali</h1>
+        <h2>16:00-19:00</h2>
+        <br>
+        <h1>Week-end</h1>
+        <h2>18:00-19:00</h2>
+        </div>
+      </div>
+     </div>
+    </div>
+  </div>
+  <!-- modal che si apre qunado si clicca su orari -->
+  
+  <div class="modal fade" id="myModal">
   <div class="modal-dialog">
   <form action="ControllerPrelievi" method="post">
       <div class="modal-content">
