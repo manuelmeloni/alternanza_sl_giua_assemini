@@ -16,7 +16,7 @@ import it.gov.giua.model.Ricovero;
 
 
 
-
+@WebServlet("/ControllerPrelievi")
 public class ControllerPrelievi extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;

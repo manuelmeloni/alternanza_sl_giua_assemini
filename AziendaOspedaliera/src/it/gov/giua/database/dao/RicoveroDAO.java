@@ -64,7 +64,7 @@ public class RicoveroDAO extends BaseDAO {
 	}
 	
 	//metodo per inserire un ricovero nel DB (nuovo)
-	public void setRicovero(String diagnosi, String terapia, String codice_ricovero) throws SQLException {
+	public void setRicovero(String diagnosi, String terapia, String codice_ricovero,String codice_colore, int id_utente, int anno1, int mese1,int giorno1, int anno2, int mese2, int giorno2) throws SQLException {
 		
 		String query="Insert into ricoveri (diagnosi,terapia,CODICE_RICOVERO) values ("+diagnosi+ "," + terapia+","+codice_ricovero+")";
 		int rs = getDbm().executeUpdate(query);
