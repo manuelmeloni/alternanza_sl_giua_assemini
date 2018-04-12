@@ -25,9 +25,7 @@
     </ul>
     <form action="LogoutServlet" method="post">
     <ul class="nav navbar-nav navbar-right">
-       <li class="nav-item dropdown">
-      	<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="" role="submit" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-log-in"></span>&nbsp;&nbsp;Esci </a>
-    </li>
+      <button type="submit" value="logout" class="btn btn-primary"><span class="glyphicon glyphicon-off"></span>&nbsp; Logout</button>
     </ul>
     </form>
      </div>

@@ -16,7 +16,7 @@ import it.gov.giua.model.Ricovero;
 
 
 
-
+@WebServlet("/ControllerPrelievi")
 public class ControllerPrelievi extends HttpServlet{
 	
 	private static final long serialVersionUID = 1L;
@@ -35,14 +35,12 @@ public class ControllerPrelievi extends HttpServlet{
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	    resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out = resp.getWriter();
-        
-		
+        	
 		PrelieviDAO dao = new PrelieviDAO();
 		RicoveroDAO rdao= new RicoveroDAO();
 		String codiceFiscale=req.getParameter("codiceFiscale");
 		String codiceVisita=req.getParameter("codiceVisita");
 		
-	
 		Prelievi pre= dao.getPrelievoByCodicePrelieviandCodiceFiscale(codiceFiscale,codiceVisita); 
 		Ricovero rec =rdao.getRicoveroByCodicePrelieviandCodiceFiscale(codiceFiscale, codiceVisita);
 		if(pre!=null) {
