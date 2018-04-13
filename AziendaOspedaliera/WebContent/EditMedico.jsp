@@ -31,7 +31,7 @@
 			tr { height: 30px !important; }
 			#tabellaUtente, #tabellaListaUtenti { border-style: solid !important; width: 90% !important; margin: 10px 5% 10px 5% !important; }
 			#tabellaUtente .textField { width: 80% !important; margin: 5px 10% 5px 10% !important; height: 30px; }
-			#tabellaUtente p { font-size: 14px !important; }
+			#tabellaUtente p { font-size: 14px !important; text-align: center !important; }
 		</style>
 	</head>
 	<body>
@@ -78,14 +78,7 @@
 			<div class="row">
 				<div class="jumbotron" id="listaPazientiGenerale" name="lisPazGen">
 				   <a name="lisPaz"><h2>Lista Pazienti</h2></a>
-				   <table id="filters">
-				   		<tr>
-				   			<td>
-				   				<p style="text-align: center !important"><a id="pazientiPresentiFilter"class="btn btn-primary btn-lg" href="" role="button">Pazienti Presenti</a>
-				   				<a id="pazientiPassatiFilter" class="btn btn-primary btn-lg" href="" role="button">Pazienti Passati</a></p>
-				   			</td>
-				   		</tr>
-				   </table>
+				   <p style="text-align: center !important"><a id="pazientiPresentiFilter"class="btn btn-primary btn-lg" href="Ricovero.jsp" role="button">Ricoveri</a></p>
 				   <table id="tabellaListaUtenti">
 					   <tr>
 					   		<th><strong>Nome Paziente</strong></th>
