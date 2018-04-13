@@ -14,14 +14,32 @@
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/DoveSiamoStyle.css"/>
-  
+  	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat"/>
   </head>
   <body >
-	<%@ include file = "header.jsp" %>
-	<center>
-	   <%@ include file = "chiSiamo.html" %>
-	</center>
-	<%@ include file = "footer.jsp" %>
+  
+   <style>
+     html, body {
+        height: 100%;
+      }
+      
+      #wrap {
+        min-height: 100%;
+      }
+      
+      </style>
+  
+  <div id="wrap">
+  	
+   	 <%@ include file = "header.jsp" %>
+		<center>
+		   <%@ include file = "chiSiamo.html" %>
+		</center>	
+  	  <%@ include file = "footer.jsp" %>
+  </div>
+  
+	
+	
 
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

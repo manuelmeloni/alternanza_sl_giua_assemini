@@ -27,12 +27,27 @@
 			h5 { margin: 0px !important; font-weight: bold !important; color: #307FE0; }
 			.imgFontAwesome { font-size: 140px; text-align: center; color: #307FE0; }
 			.caption h5, p { text-align: center; }
+			
+			 html, body {
+        height: 100%;
+      } 
+      #wrap {
+        min-height: 100%;
+      }
 		</style>
 	</head>
 	<body>
-		<%@ include file = "header.jsp" %>
-		<%@ include file = "DoveSiamo.html" %>
-		<%@ include file = "footer.jsp" %>
+		
+	 <div id="wrap">
+  	
+   	 <%@ include file = "header.jsp" %>
+  	<%@ include file = "DoveSiamo.html" %>
+  	<%@ include file = "footer.jsp" %>
+  	
+  </div>
+	
+		
+		
 	</body>
 	
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

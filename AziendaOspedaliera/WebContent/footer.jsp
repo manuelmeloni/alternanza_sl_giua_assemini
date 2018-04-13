@@ -1,6 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
-
-
+<style>
+	 
+      .footer {
+        position: relative;
+        margin-top: -150px; /* negative value of footer height */
+        height: 150px;
+        clear:both;
+        padding-top:20px;
+       
+      } 
+</style>
+<footer class="footer">
 <footer class="page-footer font-small blue pt-4 mt-4" style="background-color: #333333 !important; margin-top: 50px !important;">
     <div class="container-fluid text-center text-md-left"  >
         <div class="row">
@@ -37,3 +47,5 @@
     </div>
 
 </footer>
+</footer>
+

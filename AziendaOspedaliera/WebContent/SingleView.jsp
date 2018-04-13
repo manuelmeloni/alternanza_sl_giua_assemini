@@ -23,13 +23,26 @@ News news = dao.getSingleNews(id);
 <title></title>
 </head>
 <body>
- 	<%@ include file = "header.jsp" %>  	
- 	<div class="jumbotron">
- 	 <div class="container">
-  	<h1><%=news.getTitolo() %></h1>
-  		<p><%=news.getTesto() %> </p>
-  	</div>
-	</div>
- <%@ include file = "footer.jsp" %>
+
+	 <style>
+     html, body {
+        height: 100%;
+      } 
+      #wrap {
+        min-height: 100%;
+      }
+      </style>
+	<div id="wrap">
+   	 <%@ include file = "header.jsp" %>
+   	 
+  		<div class="jumbotron">
+ 	 		<div class="container">
+  				<h1><%=news.getTitolo() %></h1>
+  				<p><%=news.getTesto() %> </p>
+  			</div>
+		</div>
+		
+  </div>
+		<%@ include file = "footer.jsp" %>
 </body>
 </html>

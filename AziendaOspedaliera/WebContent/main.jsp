@@ -23,6 +23,13 @@
 			h5 { margin: 0px !important; font-weight: bold !important; color: #307FE0; }
 			.imgFontAwesome { font-size: 140px; text-align: center; color: #307FE0; }	
 			#containerA{height:2000px;}
+	 html, body {
+        height: 100%;
+      } 
+      #wrap {
+        min-height: 100%;
+      }
+
 		</style>
   	<!--  FINE CSS -->
   	
@@ -33,9 +40,20 @@
      
   </head>
   <body >
-	<%@ include file = "header.jsp" %>
-	   <%@ include file = "news.jsp" %>	   
-	<%@ include file = "footer.jsp" %>
+  
+  <div id="wrap">
+  	
+  	
+   	 <%@ include file = "header.jsp" %>
+  	 <%@ include file = "news.jsp" %>
+  	
+  	
+  	
+  </div>
+  
+	 <%@ include file = "footer.jsp" %>
+	  	   
+	
   </body>
   </html>
   

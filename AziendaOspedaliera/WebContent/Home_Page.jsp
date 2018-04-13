@@ -25,11 +25,22 @@
 	<style>
 		footer h5 { color: royalblue !important; }
 	</style>
+	 <style>
+     html, body {
+        height: 100%;
+      } 
+      #wrap {
+        min-height: 100%;
+      }
+      </style>
   </head>
   <body >
-		<%@ include file = "header.jsp" %>
-		<%@ include file = "home.jsp" %>
-		<%@ include file = "footer.jsp" %>
+  <div id="wrap">
+   	 <%@ include file = "header.jsp" %>
+  	 <%@ include file = "home.jsp" %>
+  	 <%@ include file = "footer.jsp" %>
+  </div>
+		
 	
 	<!--script per l'apertura della lista d attesa-->
     <script>
