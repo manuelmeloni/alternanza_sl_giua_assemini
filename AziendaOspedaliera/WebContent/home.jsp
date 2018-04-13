@@ -72,10 +72,10 @@
     <div class="thumbnail">
       <h1 class="jumbotron-heading"><%=news.getTitolo() %></h1>
 		<p class="lead text-muted">
-			 <%=news.getSottotitolo() %></p> 
+			  <%=news.getSottotitolo() %></p> 
 
 		<p>
-			<p><a class="btn btn-default" href="SingleView.jsp?id=<%=news.getId() %>" role="button">View details »</a></p>
+			 <p><a class="btn btn-default" href="SingleView.jsp?id=<%=news.getId() %>" role="button">View details »</a></p>
 		</p>
       </div>
     </div>
