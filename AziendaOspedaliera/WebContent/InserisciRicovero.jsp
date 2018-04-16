@@ -20,123 +20,128 @@
  	table th { height: 60px !important; }
  	table td p { text-align: center !important; }
  	table select { margin: 0px 20% 0px 20% !important; width: 60% !important; }
- </style>
+ 	
+     html, body {
+        height: 100%;
+      } 
+      #wrap {
+        min-height: 100%;
+      }
+     
+    </style>
+ 	
+ 
 </head>
 <body>
-
-<%@ include file = "header.jsp" %>
-	<center>
-<h2> DATI DEL RICOVERO</h2>
-<form action="InserisciRicovero" method="post">
-<textarea placeholder="Diagnosi" class="form-control" name="diagnosi"></textarea>
-<br>
-<textarea placeholder="Terapia" class="form-control" name="terapia" ></textarea>
-<br>
- <input type="text" class="form-control" placeholder="CodiceRicovero" name="codiceRicovero">
-  <br>
-<p>Codice Colore:<select class="form-control" style="margin: 15px 30% 15px 30% !important; width: 40% !important"" name="codice_colore">
-	  	<option>0 (bianco)</option>
-		<option>1 (verde)</option>
-		<option>2 (giallo)</option>
-		<option>3 (rosso)</option>
-	</select></p>
-<table>
-<tr>
-	<th colspan="3"><p>Data di Ingresso</p></th>
-</tr>
-<tr>
-<td>
-<p>Anno:<select class="form-control" style="width:auto" name="anno1"> 
-			<option>2018</option>
-		<option>2017</option>
-		<option>2016</option>
-		<option>2015</option>
-		<option>2014</option>
-		<option>2013</option>
-	</select>
-	</p>
-	</td>
-<td>
-  	<p>Mese:
-  		<select class="form-control" style="width:auto" name="mese1">
-		    <option>01</option>
-			<option>02</option>
-			<option>03</option>
-			<option>04</option>
-			 <option>05</option>
-			<option>06</option>
-			<option>07</option>
-			<option>08</option>
-			 <option>09</option>
-			<option>10</option>
-			<option>11</option>
-			<option>12</option>
-		</select>
-	</p>
-</td>
-<td>
-	<p>Giorno:
-		<input type="number" name="giorno1" min="1" max="31" style="margin: 0px 40% 0px 40% !important; width: 20% !important"/>
-	</p>
-</td>
-</tr>
-<tr>
-	<th colspan="3"><p>Data di Uscita</p></th>
-</tr>
-<tr>
-	<td>
-<p>Anno:<select class="form-control" style="width:auto" name="anno2"> 
-			<option>2018</option>
-		<option>2017</option>
-		<option>2016</option>
-		<option>2015</option>
-		<option>2014</option>
-		<option>2013</option>
-	</select>
-	</p>
-	</td>
-<td>
-  	<p>Mese:
-  		<select class="form-control" style="width:auto" name="mese2">
-		    <option>01</option>
-			<option>02</option>
-			<option>03</option>
-			<option>04</option>
-			 <option>05</option>
-			<option>06</option>
-			<option>07</option>
-			<option>08</option>
-			 <option>09</option>
-			<option>10</option>
-			<option>11</option>
-			<option>12</option>
-		</select>
-	</p>
-</td>
-<td>
-	<p>Giorno:
-		<input type="number" name="giorno2" min="1" max="31" style="margin: 0px 40% 0px 40% !important; width: 20% !important"/>
-	</p>
-</td>
-</tr>
-</table>
-  
-  <button type="submit" value="login" class="btn btn-primary">Invia</button>
-</form>
-
-
-
-
-
-
-</div>
-	</center>
 	
-<%@ include file = "footer.jsp" %>	
-	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>  
-  
+	<div id="wrap">
+		<%@ include file = "header.jsp" %>
+			<center>
+		<h2> DATI DEL RICOVERO</h2>
+		<form action="InserisciRicovero" method="post">
+		<textarea placeholder="Diagnosi" class="form-control" name="diagnosi"></textarea>
+		<br>
+		<textarea placeholder="Terapia" class="form-control" name="terapia" ></textarea>
+		<br>
+		 <input type="text" class="form-control" placeholder="CodiceRicovero" name="codiceRicovero">
+		  <br>
+		<p>Codice Colore:<select class="form-control" style="margin: 15px 30% 15px 30% !important; width: 40% !important"" name="codice_colore">
+			  	<option>0 (bianco)</option>
+				<option>1 (verde)</option>
+				<option>2 (giallo)</option>
+				<option>3 (rosso)</option>
+			</select></p>
+		<table>
+		<tr>
+			<th colspan="3"><p>Data di Ingresso</p></th>
+		</tr>
+		<tr>
+		<td>
+		<p>Anno:<select class="form-control" style="width:auto" name="anno1"> 
+					<option>2018</option>
+				<option>2017</option>
+				<option>2016</option>
+				<option>2015</option>
+				<option>2014</option>
+				<option>2013</option>
+			</select>
+			</p>
+			</td>
+		<td>
+		  	<p>Mese:
+		  		<select class="form-control" style="width:auto" name="mese1">
+				    <option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					 <option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					 <option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+				</select>
+			</p>
+		</td>
+		<td>
+			<p>Giorno:
+				<input type="number" name="giorno1" min="1" max="31" style="margin: 0px 40% 0px 40% !important; width: 20% !important"/>
+			</p>
+		</td>
+		</tr>
+		<tr>
+			<th colspan="3"><p>Data di Uscita</p></th>
+		</tr>
+		<tr>
+			<td>
+		<p>Anno:<select class="form-control" style="width:auto" name="anno2"> 
+					<option>2018</option>
+				<option>2017</option>
+				<option>2016</option>
+				<option>2015</option>
+				<option>2014</option>
+				<option>2013</option>
+			</select>
+			</p>
+			</td>
+		<td>
+		  	<p>Mese:
+		  		<select class="form-control" style="width:auto" name="mese2">
+				    <option>01</option>
+					<option>02</option>
+					<option>03</option>
+					<option>04</option>
+					 <option>05</option>
+					<option>06</option>
+					<option>07</option>
+					<option>08</option>
+					 <option>09</option>
+					<option>10</option>
+					<option>11</option>
+					<option>12</option>
+				</select>
+			</p>
+		</td>
+		<td>
+			<p>Giorno:
+				<input type="number" name="giorno2" min="1" max="31" style="margin: 0px 40% 0px 40% !important; width: 20% !important"/>
+			</p>
+		</td>
+		</tr>
+		</table>
+		  
+		  <button type="submit" value="login" class="btn btn-primary">Invia</button>
+		</form>
+		
+			</center>
+	</div>	
+		<%@ include file = "footer.jsp" %>	
+			  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		    <script src="js/bootstrap.min.js"></script>  
+		  
 </body>
 </html>

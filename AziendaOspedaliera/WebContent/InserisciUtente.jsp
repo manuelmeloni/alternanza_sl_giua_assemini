@@ -11,58 +11,66 @@
   	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat"/>
-  
+  	
+  	 <style>
+     html, body {
+        height: 100%;
+      } 
+      #wrap {
+        min-height: 100%;
+      }
+      </style>
+  	
 </head>
 <body>
-
-
-<%@ include file = "header.jsp" %>
-	<center>
-	<div style="padding-left:20%; padding-right:20%"> 
-	<h2> DATI DEL PAZIENTE </h2>  
- 
- 
-    
- 	 
-</div>
-
-<form action="InserisciUtente" method="post">
-	 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-    <input type="text" class="form-control" name="CodiceFiscale" placeholder="Codice Fiscale" maxlength="16" >
-  <div class="row">
-    <div class="col">
-      <input type="text" class="form-control" name="Nome"placeholder="Nome">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" name="Cognome" placeholder="Cognome">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" name="anno" placeholder="Cognome">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" name="mese" placeholder="Cognome">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" name="giorno" placeholder="Cognome">
-    </div>
-  
-  </div>
-  
-<button type="submit" value="login" class="btn btn-primary">Invia</button>
-     </form>
-
-
-
- 	 
-
-</div>
-	</center>
-	<%@ include file = "footer.jsp" %>
 	
-	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>  
-  
+	<div id="wrap">
+		<%@ include file = "header.jsp" %>
+			<center>
+			<div style="padding-left:20%; padding-right:20%"> 
+			<h2> DATI DEL PAZIENTE </h2>  
+		 
+		 
+		    
+		 	 
+		</div>
+		
+		<form action="InserisciUtente" method="post">
+			 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+		   
+		  <div class="row" style="width:90%">
+		  	<div class="col">
+		  	 <br><input type="text" class="form-control" name="CodiceFiscale" placeholder="Codice Fiscale" maxlength="16" ><br>
+		  	</div>
+		    <div class="col">
+		      <input type="text" class="form-control" name="Nome"placeholder="Nome"><br>
+		    </div>
+		    <div class="col">
+		      <input type="text" class="form-control" name="Cognome" placeholder="Cognome"><br>
+		    </div>
+		    <div class="col">
+		      <input type="text" class="form-control" name="anno" placeholder="Anno"><br>
+		    </div>
+		    <div class="col">
+		      <input type="text" class="form-control" name="mese" placeholder="Mese"><br>
+		    </div>
+		    <div class="col">
+		      <input type="text" class="form-control" name="giorno" placeholder="Giorno"><br>
+		    </div>
+		  
+		  </div>
+		  <br>
+		<button type="submit" value="login" class="btn btn-primary">Invia</button>
+		     </form>
+
+			</center>
+		</div>
+			<%@ include file = "footer.jsp" %>
+			
+			  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		    <!-- Include all compiled plugins (below), or include individual files as needed -->
+		    <script src="js/bootstrap.min.js"></script>  
+		  
 </body>
 </html>
